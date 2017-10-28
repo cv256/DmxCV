@@ -1,0 +1,814 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<DMXCV Version="1.0.0.0">
+  <SaveDate>2015-11-06T11:58:42.3597662+00:00</SaveDate>
+  <Offline>true</Offline>
+  <Debug>false</Debug>
+  <Preview>false</Preview>
+  
+  
+  
+  <Fixture>
+    <Name>Luz SW</Name>
+    <Address>0</Address>
+    <LocationXPercent>0</LocationXPercent>
+    <LocationYPercent>100</LocationYPercent>
+    <RotationDegrees>20</RotationDegrees>
+    <FixtureModelFileName>RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
+    <LastFixedPreset>DMX Party</LastFixedPreset>
+  </Fixture>
+  
+  <Fixture>
+    <Name>Luz NW</Name>
+    <Address>8</Address>
+    <LocationXPercent>0</LocationXPercent>
+    <LocationYPercent>0</LocationYPercent>
+    <RotationDegrees>110</RotationDegrees>
+    <FixtureModelFileName>RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
+    <LastFixedPreset>DMX Party</LastFixedPreset>
+  </Fixture>
+  
+  <Fixture>
+    <Name>Luz NE</Name>
+    <Address>16</Address>
+    <LocationXPercent>100</LocationXPercent>
+    <LocationYPercent>0</LocationYPercent>
+    <RotationDegrees>200</RotationDegrees>
+    <FixtureModelFileName>RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
+    <LastFixedPreset>DMX Party</LastFixedPreset>
+  </Fixture>
+  
+  <Fixture>
+    <Name>Luz SE</Name>
+    <Address>24</Address>
+    <LocationXPercent>100</LocationXPercent>
+    <LocationYPercent>100</LocationYPercent>
+    <RotationDegrees>290</RotationDegrees>
+    <FixtureModelFileName>RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
+    <LastFixedPreset>DMX Party</LastFixedPreset>
+  </Fixture>
+  
+  
+  
+  <Preset>
+    <Name>Strob Colored</Name>
+    <AffectedFixture>
+      <Name>Luz SW</Name>
+      <SeqControllerIdx>0</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>227</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>0</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>146</Value>
+      </PresetChannel> 
+    </AffectedFixture>
+    <AffectedFixture>
+      <Name>Luz NW</Name>
+      <SeqControllerIdx>1</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>227</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>0</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>146</Value>
+      </PresetChannel> 
+    </AffectedFixture>
+    <AffectedFixture>
+      <Name>Luz NE</Name>
+      <SeqControllerIdx>2</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>227</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>0</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>146</Value>
+      </PresetChannel> 
+    </AffectedFixture>
+    <AffectedFixture>
+      <Name>Luz SE</Name>
+      <SeqControllerIdx>3</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>227</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>0</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>146</Value>
+      </PresetChannel> 
+    </AffectedFixture>
+  </Preset>
+
+
+  <Preset>
+    <Name>Strob Power</Name>
+    <AffectedFixture>
+      <Name>Luz SW</Name>
+      <SeqControllerIdx>0</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>227</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>255</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>183</Value>
+      </PresetChannel> 
+    </AffectedFixture>
+    <AffectedFixture>
+      <Name>Luz NW</Name>
+      <SeqControllerIdx>1</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>227</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>255</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>183</Value>
+      </PresetChannel> 
+    </AffectedFixture>
+    <AffectedFixture>
+      <Name>Luz NE</Name>
+      <SeqControllerIdx>2</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>227</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>255</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>183</Value>
+      </PresetChannel> 
+    </AffectedFixture>
+    <AffectedFixture>
+      <Name>Luz SE</Name>
+      <SeqControllerIdx>3</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>227</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>255</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>183</Value>
+      </PresetChannel> 
+    </AffectedFixture>
+  </Preset>
+
+
+  <Preset>
+    <Name>Flash</Name>
+    <AffectedFixture>
+      <Name>Luz SW</Name>
+      <SeqControllerIdx>0</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>255</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>255</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>5</Value>
+      </PresetChannel>  
+    </AffectedFixture>
+    <AffectedFixture>
+      <Name>Luz NW</Name>
+      <SeqControllerIdx>1</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>255</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>255</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>5</Value>
+      </PresetChannel>  
+    </AffectedFixture>
+    <AffectedFixture>
+      <Name>Luz NE</Name>
+      <SeqControllerIdx>2</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>255</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>255</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>5</Value>
+      </PresetChannel>  
+    </AffectedFixture>
+    <AffectedFixture>
+      <Name>Luz SE</Name>
+      <SeqControllerIdx>3</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>255</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>255</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>5</Value>
+      </PresetChannel>  
+    </AffectedFixture>
+  </Preset>
+
+
+  <Preset>
+    <Name>Rainbow RGB</Name>
+    <AffectedFixture>
+      <Name>Luz SW</Name>
+      <SeqControllerIdx>0</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>124</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>129</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>128</Value>
+      </PresetChannel> 
+    </AffectedFixture>
+    <AffectedFixture>
+      <Name>Luz NW</Name>
+      <SeqControllerIdx>1</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>124</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>129</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>128</Value>
+      </PresetChannel>  
+    </AffectedFixture>
+    <AffectedFixture>
+      <Name>Luz NE</Name>
+      <SeqControllerIdx>2</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>124</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>129</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>128</Value>
+      </PresetChannel> 
+    </AffectedFixture>
+    <AffectedFixture>
+      <Name>Luz SE</Name>
+      <SeqControllerIdx>3</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>124</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>129</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>128</Value>
+      </PresetChannel> 
+    </AffectedFixture>
+  </Preset>
+
+
+  <Preset>
+    <Name>Rainbow All Colors</Name>
+    <AffectedFixture>
+      <Name>Luz SW</Name>
+      <SeqControllerIdx>0</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>125</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>0</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>128</Value>
+      </PresetChannel> 
+    </AffectedFixture>
+    <AffectedFixture>
+      <Name>Luz NW</Name>
+      <SeqControllerIdx>1</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>125</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>0</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>128</Value>
+      </PresetChannel> 
+    </AffectedFixture>
+    <AffectedFixture>
+      <Name>Luz NE</Name>
+      <SeqControllerIdx>2</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>125</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>0</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>128</Value>
+      </PresetChannel> 
+    </AffectedFixture>
+    <AffectedFixture>
+      <Name>Luz SE</Name>
+      <SeqControllerIdx>3</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>125</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>0</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>128</Value>
+      </PresetChannel> 
+    </AffectedFixture>
+  </Preset>
+
+
+  <Preset>
+    <Name>Music Colored</Name>
+    <AffectedFixture>
+      <Name>Luz SW</Name>
+      <SeqControllerIdx>0</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>176</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>0</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>255</Value>
+      </PresetChannel>  
+    </AffectedFixture>
+    <AffectedFixture>
+      <Name>Luz NW</Name>
+      <SeqControllerIdx>1</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>176</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>0</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>255</Value>
+      </PresetChannel>   
+    </AffectedFixture>
+    <AffectedFixture>
+      <Name>Luz NE</Name>
+      <SeqControllerIdx>2</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>176</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>0</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>255</Value>
+      </PresetChannel>  
+    </AffectedFixture>
+    <AffectedFixture>
+      <Name>Luz SE</Name>
+      <SeqControllerIdx>3</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>176</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>0</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>255</Value>
+      </PresetChannel>  
+    </AffectedFixture>
+  </Preset>
+
+
+
+  <Preset>
+    <Name>Music Power</Name>
+    <AffectedFixture>
+      <Name>Luz SW</Name>
+      <SeqControllerIdx>0</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>176</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>255</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>0</Value>
+      </PresetChannel>   
+    </AffectedFixture>
+    <AffectedFixture>
+      <Name>Luz NW</Name>
+      <SeqControllerIdx>1</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>176</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>255</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>0</Value>
+      </PresetChannel>   
+    </AffectedFixture>
+    <AffectedFixture>
+      <Name>Luz NE</Name>
+      <SeqControllerIdx>2</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>176</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>255</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>0</Value>
+      </PresetChannel>  
+    </AffectedFixture>
+    <AffectedFixture>
+      <Name>Luz SE</Name>
+      <SeqControllerIdx>3</SeqControllerIdx>
+      <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>176</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>255</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Show</Mode>
+        <Value>0</Value>
+      </PresetChannel>  
+    </AffectedFixture>
+  </Preset>
+  
+  
+  
+  <Preset>
+    <Name>DMX Party</Name>
+    <AffectedFixture>
+      <Name>Luz SW</Name>
+      <SeqControllerIdx>0</SeqControllerIdx>
+       <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>0</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>0</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Ignore</Mode>
+        <Value>146</Value>
+      </PresetChannel>     
+      <PresetChannel>
+        <Type>Intensity</Type>
+        <Mode>Show</Mode>
+        <Value>0</Value>
+        <SoundControllerPercent>100</SoundControllerPercent>
+      </PresetChannel>    
+      <PresetChannel>
+        <Type>Red</Type>
+        <Mode>Show</Mode>
+        <Value>0</Value>
+        <SeqControllerPercent>100</SeqControllerPercent>
+      </PresetChannel>    
+      <PresetChannel>
+        <Type>Green</Type>
+        <Mode>Show</Mode>
+        <Value>255</Value>
+      </PresetChannel>    
+      <PresetChannel>
+        <Type>Blue</Type>
+        <Mode>Show</Mode>
+        <Value>0</Value>
+        <SeqControllerPercent>100</SeqControllerPercent>
+      </PresetChannel>    
+      <PresetChannel>
+        <Type>White</Type>
+        <Mode>Show</Mode>
+        <Value>0</Value>
+      </PresetChannel>  
+    </AffectedFixture>
+    <AffectedFixture>
+      <Name>Luz NW</Name>
+      <SeqControllerIdx>1</SeqControllerIdx>
+       <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>0</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>0</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Ignore</Mode>
+        <Value>146</Value>
+      </PresetChannel>     
+      <PresetChannel>
+        <Type>Intensity</Type>
+        <Mode>Show</Mode>
+        <Value>0</Value>
+        <SoundControllerPercent>100</SoundControllerPercent>
+      </PresetChannel>    
+      <PresetChannel>
+        <Type>Red</Type>
+        <Mode>Show</Mode>
+        <Value>0</Value>
+        <SeqControllerPercent>100</SeqControllerPercent>
+      </PresetChannel>    
+      <PresetChannel>
+        <Type>Green</Type>
+        <Mode>Show</Mode>
+        <Value>255</Value>
+      </PresetChannel>    
+      <PresetChannel>
+        <Type>Blue</Type>
+        <Mode>Show</Mode>
+        <Value>0</Value>
+        <SeqControllerPercent>100</SeqControllerPercent>
+      </PresetChannel>    
+      <PresetChannel>
+        <Type>White</Type>
+        <Mode>Show</Mode>
+        <Value>0</Value>
+      </PresetChannel>  
+    </AffectedFixture>
+    <AffectedFixture>
+      <Name>Luz NE</Name>
+      <SeqControllerIdx>2</SeqControllerIdx>
+       <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>0</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>0</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Ignore</Mode>
+        <Value>146</Value>
+      </PresetChannel>     
+      <PresetChannel>
+        <Type>Intensity</Type>
+        <Mode>Show</Mode>
+        <Value>0</Value>
+        <SoundControllerPercent>100</SoundControllerPercent>
+      </PresetChannel>    
+      <PresetChannel>
+        <Type>Red</Type>
+        <Mode>Show</Mode>
+        <Value>0</Value>
+        <SeqControllerPercent>100</SeqControllerPercent>
+      </PresetChannel>    
+      <PresetChannel>
+        <Type>Green</Type>
+        <Mode>Show</Mode>
+        <Value>255</Value>
+      </PresetChannel>    
+      <PresetChannel>
+        <Type>Blue</Type>
+        <Mode>Show</Mode>
+        <Value>0</Value>
+        <SeqControllerPercent>100</SeqControllerPercent>
+      </PresetChannel>    
+      <PresetChannel>
+        <Type>White</Type>
+        <Mode>Show</Mode>
+        <Value>0</Value>
+      </PresetChannel>  
+    </AffectedFixture>
+    <AffectedFixture>
+      <Name>Luz SE</Name>
+      <SeqControllerIdx>3</SeqControllerIdx>
+       <PresetChannel>
+        <Type>Mode</Type>
+        <Mode>Hide</Mode>
+        <Value>0</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>SubMode</Type>
+        <Mode>Hide</Mode>
+        <Value>0</Value>
+      </PresetChannel>
+      <PresetChannel>
+        <Type>Speed</Type>
+        <Mode>Ignore</Mode>
+        <Value>146</Value>
+      </PresetChannel>     
+      <PresetChannel>
+        <Type>Intensity</Type>
+        <Mode>Show</Mode>
+        <Value>0</Value>
+        <SoundControllerPercent>100</SoundControllerPercent>
+      </PresetChannel>    
+      <PresetChannel>
+        <Type>Red</Type>
+        <Mode>Show</Mode>
+        <Value>0</Value>
+        <SeqControllerPercent>100</SeqControllerPercent>
+      </PresetChannel>    
+      <PresetChannel>
+        <Type>Green</Type>
+        <Mode>Show</Mode>
+        <Value>255</Value>
+      </PresetChannel>    
+      <PresetChannel>
+        <Type>Blue</Type>
+        <Mode>Show</Mode>
+        <Value>0</Value>
+        <SeqControllerPercent>100</SeqControllerPercent>
+      </PresetChannel>    
+      <PresetChannel>
+        <Type>White</Type>
+        <Mode>Show</Mode>
+        <Value>0</Value>
+      </PresetChannel>  
+    </AffectedFixture>
+  </Preset>
+
+
+</DMXCV>

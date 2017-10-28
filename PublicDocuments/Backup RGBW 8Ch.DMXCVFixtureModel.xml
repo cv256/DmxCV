@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<DMXCVFixtureModel Version="1.0.0.0">
+  <SaveDate>2015-11-06T11:58:42.3597662+00:00</SaveDate>
+  <Name>Led RGBW 8Ch</Name>
+  
+  <Channel>
+    <Type>Mode</Type>
+    <Address>0</Address>
+  </Channel>
+
+  <Channel>
+    <Type>SubMode</Type>
+    <Address>1</Address>
+  </Channel>
+
+  <Channel>
+    <Type>Speed</Type>
+    <Address>2</Address>
+  </Channel>
+
+  <Channel>
+    <Type>Intensity</Type>
+    <Address>3</Address>
+  </Channel>
+
+  <Channel>
+    <Type>Red</Type>
+    <Address>4</Address>
+  </Channel>
+
+  <Channel>
+    <Type>Green</Type>
+    <Address>5</Address>
+  </Channel>
+
+  <Channel>
+    <Type>Blue</Type>
+    <Address>6</Address>
+  </Channel>
+
+  <Channel>
+    <Type>White</Type>
+    <Address>7</Address>
+  </Channel>
+
+</DMXCVFixtureModel>
