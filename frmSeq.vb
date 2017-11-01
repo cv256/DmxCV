@@ -70,7 +70,7 @@ Public Class frmSeq
 
     Public Sub Advance()
         If ActiveSequence Is Nothing Then Return
-        Dim tmpSpeed As Integer = Math.Min(450, trSpeed.Value + TextBoxValue(txtSound) / 60 * _MainForm._frmSound.SoundController)
+        Dim tmpSpeed As Integer = Math.Min(450, trSpeed.Value + TextBoxValue(txtSound) / 60 * _MainForm.FrmSound.SoundController)
         Using g As Graphics = trSpeed.CreateGraphics
             Dim l As Integer = Math.Min(255, tmpSpeed) / 255 * (trSpeed.Height - 12 - 12)
             g.DrawLine(Pens.Orange, trSpeed.Width - 15, trSpeed.Height - 12, trSpeed.Width - 15, trSpeed.Height - 12 - l)
@@ -130,7 +130,7 @@ Public Class frmSeq
     End Sub
 
     Private Sub lbSound_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbSound.LinkClicked
-        _MainForm._frmSound.Visible = True
+        _MainForm.FrmSound.Visible = True
     End Sub
 
     Private Sub lstSeq_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstSeq.SelectedIndexChanged

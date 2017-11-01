@@ -151,11 +151,11 @@
     End Sub
 
     Private Sub lbSound_Click(sender As Object, e As EventArgs)
-        _MainForm._frmSound.Visible = True
+        _MainForm.FrmSound.Visible = True
     End Sub
 
     Private Sub lbSeq_Click(sender As Object, e As EventArgs)
-        _MainForm._frmSeq.Visible = True
+        _MainForm.FrmSeq.Visible = True
     End Sub
 
     Private Sub txt_TextChanged(sender As Object, e As EventArgs)
@@ -189,7 +189,7 @@
         Next
         Dim cc As Control = Me.Controls("lbSound")
         Using g As Graphics = cc.CreateGraphics
-            Dim l As Integer = _MainForm._frmSound.SoundController / 255 * cc.Width
+            Dim l As Integer = _MainForm.FrmSound.SoundController / 255 * cc.Width
             g.DrawLine(Pens.Orange, 0, cc.Height - 5, l, cc.Height - 5)
             g.DrawLine(Pens.DarkRed, l, cc.Height - 5, cc.Width, cc.Height - 5)
         End Using

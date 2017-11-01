@@ -2,13 +2,13 @@
 Public Class MainForm
     Public ReadOnly Fixtures As New List(Of FixtureTemplate)
     Public Presets As New Dictionary(Of String, Preset)
-    Public ReadOnly _frmSound As New frmSound
-    Public ReadOnly _frmSeq As New frmSeq
+    Public ReadOnly FrmSound As New frmSound
+    Public ReadOnly FrmSeq As New frmSeq
     Public Debug As frmDebug
-    Public frmFixture As ucFixture
+    Public FrmFixture As ucFixture
     Private _BackgroundImage As Image
-    Public _LastUpdate As Date
-    Private _fileName As String, _defaultPath As String
+    Public LastUpdate As Date
+    Private FileName As String, DefaultPath As String
 
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles Me.Load
         _MainForm = Me
@@ -28,12 +28,12 @@ Public Class MainForm
         '    If MsgBox(TypeName(ex) & vbCrLf & vbCrLf & ex.Message, MsgBoxStyle.OkCancel Or MsgBoxStyle.Exclamation) = MsgBoxResult.Cancel Then End
         'End Try
 
-        _frmSound.Init()
+        FrmSound.Init()
 
         For Each f As FixtureTemplate In Me.Fixtures
             f.Update()
         Next
-        _LastUpdate = Now
+        LastUpdate = Now
         PaintBackground(Me, New PaintEventArgs(Me.CreateGraphics, Nothing))
     End Sub
 
@@ -42,16 +42,16 @@ Public Class MainForm
     Private Sub FixtureUpdated(pDebugInfo As String)
         If Not String.IsNullOrEmpty(pDebugInfo) Then
             If Debug IsNot Nothing AndAlso Debug.Visible Then
-                Debug.AppendText("   Last update was " & CLng(Now.Subtract(_LastUpdate).TotalMilliseconds) & "ms ago" & vbCrLf & pDebugInfo)
+                Debug.AppendText("   Last update was " & CLng(Now.Subtract(LastUpdate).TotalMilliseconds) & "ms ago" & vbCrLf & pDebugInfo)
             End If
-            _LastUpdate = Now
+            LastUpdate = Now
             If Me.Visible AndAlso ckPreview.Checked Then
                 Using g As Graphics = Me.CreateGraphics
                     PaintBackground(Me, New PaintEventArgs(g, Nothing)) ' se faço Me.Invalidate ou Me.Refresh ele executa o Paint 3 vezes nao sei porquê
                 End Using
             End If
         End If
-        If frmFixture IsNot Nothing AndAlso frmFixture.Visible Then frmFixture.PaintVUs()
+        If FrmFixture IsNot Nothing AndAlso FrmFixture.Visible Then FrmFixture.PaintVUs()
     End Sub
 
     Private Sub PaintBackground(sender As Object, e As PaintEventArgs) Handles Me.Paint
@@ -95,41 +95,41 @@ Public Class MainForm
 
 
     Private Sub btnAllFixtures_Click(sender As Object, e As EventArgs) Handles btnAllFixtures.Click
-        If frmFixture IsNot Nothing AndAlso frmFixture.Fixtures.Equals(Me.Fixtures) Then Return
-        If frmFixture IsNot Nothing Then
-            Me.Controls.Remove(frmFixture)
-            frmFixture = Nothing
+        If FrmFixture IsNot Nothing AndAlso FrmFixture.Fixtures.Equals(Me.Fixtures) Then Return
+        If FrmFixture IsNot Nothing Then
+            Me.Controls.Remove(FrmFixture)
+            FrmFixture = Nothing
         End If
-        frmFixture = New ucFixture(Fixtures)
-        frmFixture.Location = btnAllFixtures.Location
-        Me.Controls.Add(frmFixture)
-        frmFixture.BringToFront()
+        FrmFixture = New ucFixture(Fixtures)
+        FrmFixture.Location = btnAllFixtures.Location
+        Me.Controls.Add(FrmFixture)
+        FrmFixture.BringToFront()
     End Sub
 
     Private Sub MainForm_MouseDown(sender As Object, e As MouseEventArgs) Handles Me.MouseDown
         For Each f As FixtureTemplate In Fixtures
             With f.MyRectangle(Me.ClientSize)
                 If e.X > .X AndAlso e.X < .X + .Width AndAlso e.Y > .Y AndAlso e.Y < .Y + .Height Then
-                    If frmFixture IsNot Nothing AndAlso frmFixture.Fixtures.Equals(f) = False Then
-                        Me.Controls.Remove(frmFixture)
-                        frmFixture = Nothing
+                    If FrmFixture IsNot Nothing AndAlso FrmFixture.Fixtures.Equals(f) = False Then
+                        Me.Controls.Remove(FrmFixture)
+                        FrmFixture = Nothing
                     End If
-                    If frmFixture IsNot Nothing Then Return
+                    If FrmFixture IsNot Nothing Then Return
                     Dim tmpF As New List(Of FixtureTemplate) : tmpF.Add(f)
-                    frmFixture = New ucFixture(tmpF)
-                    Me.Controls.Add(frmFixture)
-                    frmFixture.Location = e.Location
+                    FrmFixture = New ucFixture(tmpF)
+                    Me.Controls.Add(FrmFixture)
+                    FrmFixture.Location = e.Location
                     With _MainForm.ClientSize
-                        If frmFixture.Bottom > .Height - 50 Then frmFixture.Top = .Height - 50 - frmFixture.Height
-                        If frmFixture.Right > .Width - 30 Then frmFixture.Left = .Width - 10 - frmFixture.Width
+                        If FrmFixture.Bottom > .Height - 50 Then FrmFixture.Top = .Height - 50 - FrmFixture.Height
+                        If FrmFixture.Right > .Width - 30 Then FrmFixture.Left = .Width - 10 - FrmFixture.Width
                     End With
                     Return
                 End If
             End With
         Next
-        If frmFixture IsNot Nothing Then
-            Me.Controls.Remove(frmFixture)
-            frmFixture = Nothing
+        If FrmFixture IsNot Nothing Then
+            Me.Controls.Remove(FrmFixture)
+            FrmFixture = Nothing
         End If
     End Sub
 
@@ -194,7 +194,7 @@ Public Class MainForm
 
     Public Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Timer1.Enabled = False
-        _frmSeq.Advance()
+        FrmSeq.Advance()
         Dim tmpDebug As String = "" ', cIdx As Integer = 0
         For Each f As FixtureTemplate In Fixtures
             'Dim p As Preset = Presets(f.ActivePreset)
@@ -219,7 +219,7 @@ Public Class MainForm
         End Get
         Set(ByVal value As Integer)
             Timer1.Interval = value
-            _frmSound.RefreshRate = value
+            FrmSound.RefreshRate = value
         End Set
     End Property
 
@@ -236,17 +236,17 @@ Public Class MainForm
 
     Public Property FileName As String
         Get
-            Return _fileName
+            Return FileName
         End Get
         Private Set(value As String)
-            _defaultPath = IO.Path.GetDirectoryName(value)
-            _fileName = value
-            Me.Text = "DMX CV " & My.Application.Info.Version.ToString & "- " & IO.Path.GetFileNameWithoutExtension(_fileName)
+            DefaultPath = IO.Path.GetDirectoryName(value)
+            FileName = value
+            Me.Text = "DMX CV " & My.Application.Info.Version.ToString & "- " & IO.Path.GetFileNameWithoutExtension(FileName)
         End Set
     End Property
     Public ReadOnly Property DefaultPath As String
         Get
-            Return _defaultPath
+            Return DefaultPath
         End Get
     End Property
 
@@ -264,7 +264,7 @@ Public Class MainForm
               New XElement("Preview", ckPreview.Checked)
             )
 
-            root.Add(_frmSeq.Serialize())
+            root.Add(FrmSeq.Serialize())
 
             For Each f As FixtureTemplate In Me.Fixtures
                 root.Add(f.Serialize)
@@ -292,7 +292,7 @@ Public Class MainForm
     Public Sub LoadFromFile(ByVal pFileName As String)
         Try
             Timer1.Enabled = False
-            _defaultPath = IO.Path.GetDirectoryName(pFileName)
+            DefaultPath = IO.Path.GetDirectoryName(pFileName)
             Dim xDoc As XDocument
             xDoc = XDocument.Load(pFileName)
             With xDoc.<DMXCV>
@@ -328,7 +328,7 @@ Public Class MainForm
                         End
                     End If
                 Next
-                _frmSeq.Init(.<Sequencer>.<ActiveSequence>.Value, .<Sequencer>.<BaseSpeed>.Value, .<Sequencer>.<SoundSpeed>.Value, .<Sequencer>.<Mode>.Value)
+                FrmSeq.Init(.<Sequencer>.<ActiveSequence>.Value, .<Sequencer>.<BaseSpeed>.Value, .<Sequencer>.<SoundSpeed>.Value, .<Sequencer>.<Mode>.Value)
             End With
 
             Me.FileName = pFileName
