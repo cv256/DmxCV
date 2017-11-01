@@ -167,7 +167,7 @@ Public Class FixtureValues
     Public Function TotalValue(pChannelType As ChannelType) As Integer
         If Not Channels.ContainsKey(pChannelType) Then Return 0
         With Channels(pChannelType)
-            Return Math.Max(Math.Min(.UserValue + _MainForm.FrmSound.SoundController / 100 * .SoundControllerPercent + _MainForm.FrmSeq.SeqController(SeqControllerIdx) / 100 * .SeqControllerPercent, 255), 0)
+            Return Math.Max(Math.Min(.UserValue + _MainForm._frmSound.SoundController / 100 * .SoundControllerPercent + _MainForm._frmSeq.SeqController(SeqControllerIdx) / 100 * .SeqControllerPercent, 255), 0)
         End With
     End Function
 
