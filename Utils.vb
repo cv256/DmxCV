@@ -1,7 +1,11 @@
-﻿
-Module Utils
+﻿Module Utils
 
-    Public _Dmx As uDMX, _Offline As Boolean
+    ' Declare Functions for uDMX configurations and data transfer
+    Public Declare Function Configure Lib "uDMX.dll" () As Integer
+    Public Declare Function ChannelSet Lib "uDMX.dll" (ByVal Channel As Int32, ByVal Data As Int32) As Boolean
+    Public Declare Function ChannelsSet Lib "uDMX.dll" (ByVal ChanCnt As Int32, ByVal ChanFirst As Int32, ByRef FirstChan As Byte) As Boolean
+
+    Public _Offline As Boolean
     Public _MainForm As MainForm
     Public _Grads2Radians = Math.PI / 180
 
@@ -74,8 +78,8 @@ Module Utils
         v *= 100
 
         ''# Return a color in the new color space
-        Return New HSV With {.h = CInt(Math.Round(h, MidpointRounding.AwayFromZero)), _
-                            .s = CInt(Math.Round(s, MidpointRounding.AwayFromZero)), _
+        Return New HSV With {.h = CInt(Math.Round(h, MidpointRounding.AwayFromZero)),
+                            .s = CInt(Math.Round(s, MidpointRounding.AwayFromZero)),
                             .v = CInt(Math.Round(v, MidpointRounding.AwayFromZero))}
     End Function
 
@@ -146,8 +150,8 @@ Module Utils
         b *= 255
 
         ''# Return a color in the new color space
-        Return New RGB With {.r = CInt(Math.Round(r, MidpointRounding.AwayFromZero)), _
-                            .g = CInt(Math.Round(g, MidpointRounding.AwayFromZero)), _
+        Return New RGB With {.r = CInt(Math.Round(r, MidpointRounding.AwayFromZero)),
+                            .g = CInt(Math.Round(g, MidpointRounding.AwayFromZero)),
                             .b = CInt(Math.Round(b, MidpointRounding.AwayFromZero))}
     End Function
 

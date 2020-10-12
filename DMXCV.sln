@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1259
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DMXCV", "DMXCV.vbproj", "{EC317D1A-A3E7-43B3-93D5-9587E8B796F7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uDMXnet", "uDMXnet\uDMXnet.csproj", "{A8FD782C-3311-424E-BFAF-0963D6899B57}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,16 +21,11 @@ Global
 		{EC317D1A-A3E7-43B3-93D5-9587E8B796F7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EC317D1A-A3E7-43B3-93D5-9587E8B796F7}.Release|x86.ActiveCfg = Release|x86
 		{EC317D1A-A3E7-43B3-93D5-9587E8B796F7}.Release|x86.Build.0 = Release|x86
-		{A8FD782C-3311-424E-BFAF-0963D6899B57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A8FD782C-3311-424E-BFAF-0963D6899B57}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A8FD782C-3311-424E-BFAF-0963D6899B57}.Debug|x86.ActiveCfg = Debug|x86
-		{A8FD782C-3311-424E-BFAF-0963D6899B57}.Debug|x86.Build.0 = Debug|x86
-		{A8FD782C-3311-424E-BFAF-0963D6899B57}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A8FD782C-3311-424E-BFAF-0963D6899B57}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A8FD782C-3311-424E-BFAF-0963D6899B57}.Release|x86.ActiveCfg = Release|x86
-		{A8FD782C-3311-424E-BFAF-0963D6899B57}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A953A8A2-9F60-410B-99B4-8000838A2087}
 	EndGlobalSection
 EndGlobal

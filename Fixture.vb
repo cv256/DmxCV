@@ -15,8 +15,12 @@
                 strResult = "offline"
                 Channels(c.ChannelType).LastSentValue = v
             Else
-                strResult = _Dmx.SetSingleChannel(Address + Channels(c.ChannelType).Address, v)
-                If strResult = "" Then Channels(c.ChannelType).LastSentValue = v
+                If ChannelSet(Address + Channels(c.ChannelType).Address, v) Then
+                    Channels(c.ChannelType).LastSentValue = v
+                    strResult = ""
+                Else
+                    strResult = "ERROR"
+                End If
             End If
             strDebug &= "   Ch " & (Address + Channels(c.ChannelType).Address) & " = " & v & "   result = " & strResult & "   (" & c.ChannelType.ToString & ")" & vbCrLf
         Next
@@ -62,7 +66,7 @@
             Location = New Point(.<LocationXPercent>.Value, .<LocationYPercent>.Value)
             Rotation = .<RotationDegrees>.Value
             FixtureModelFileName = .<FixtureModelFileName>.Value
-            If Not FixtureModelFileName.Contains(":") Then FixtureModelFileName = _MainForm.DefaultPath & "\" & FixtureModelFileName
+            If Not FixtureModelFileName.Contains(":") AndAlso _MainForm.DefaultPath > "" Then FixtureModelFileName = _MainForm.DefaultPath & "\" & FixtureModelFileName
             Try
                 Dim xDoc As XDocument
                 xDoc = XDocument.Load(FixtureModelFileName)

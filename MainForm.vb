@@ -1,5 +1,4 @@
-﻿
-Public Class MainForm
+﻿Public Class MainForm
     Public ReadOnly Fixtures As New List(Of FixtureTemplate)
     Public Presets As New Dictionary(Of String, Preset)
     Public ReadOnly _frmSound As New frmSound
@@ -13,7 +12,6 @@ Public Class MainForm
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles Me.Load
         _MainForm = Me
 
-        _Dmx = New uDMX ' usb controller
         If My.Application.CommandLineArgs.Count = 1 Then
             LoadFromFile(My.Application.CommandLineArgs(0))
         Else
@@ -133,12 +131,6 @@ Public Class MainForm
         End If
     End Sub
 
-
-    Private Sub MainForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        _Dmx.Dispose()
-        _Dmx = Nothing
-    End Sub
-
     Private Sub ckDebug_CheckedChanged(sender As Object, e As EventArgs) Handles ckDebug.CheckedChanged
         If ckDebug.Checked Then
             If Debug Is Nothing Then Debug = New frmDebug
@@ -149,14 +141,7 @@ Public Class MainForm
     End Sub
 
     Private Sub ckOffline_CheckedChanged(sender As Object, e As EventArgs) Handles ckOffline.CheckedChanged
-        _Offline = True
-        If Not ckOffline.Checked Then
-            If Not _Dmx.IsOpen Then
-                ckOffline.Checked = MsgBox("O dispositivo uDMX não está disponivel." & vbCrLf & "prima «Yes» para prosseguir Online, «No» para Offline", MsgBoxStyle.Exclamation Or MsgBoxStyle.YesNo) = MsgBoxResult.No
-            Else
-                _Offline = False
-            End If
-        End If
+        _Offline = ckOffline.Checked
     End Sub
 
     Public Function NewTrackBar(pName As String, pTop As Integer, pLeft As Integer, pTag As Object, pScrollHandler As System.EventHandler) As TrackBar

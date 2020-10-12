@@ -25,6 +25,7 @@ Partial Class frmSetup
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtTimer = New System.Windows.Forms.TextBox()
         Me.btApply = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -47,18 +48,29 @@ Partial Class frmSetup
         'btApply
         '
         Me.btApply.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btApply.Location = New System.Drawing.Point(90, 105)
+        Me.btApply.Location = New System.Drawing.Point(108, 32)
         Me.btApply.Name = "btApply"
         Me.btApply.Size = New System.Drawing.Size(75, 23)
         Me.btApply.TabIndex = 2
         Me.btApply.Text = "&Apply"
         Me.btApply.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Button1.Location = New System.Drawing.Point(82, 84)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(121, 22)
+        Me.Button1.TabIndex = 3
+        Me.Button1.Text = "configure/test uDMX"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'frmSetup
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(259, 140)
+        Me.ClientSize = New System.Drawing.Size(259, 113)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btApply)
         Me.Controls.Add(Me.txtTimer)
         Me.Controls.Add(Me.Label1)
@@ -71,4 +83,5 @@ Partial Class frmSetup
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txtTimer As System.Windows.Forms.TextBox
     Friend WithEvents btApply As System.Windows.Forms.Button
+    Friend WithEvents Button1 As Button
 End Class

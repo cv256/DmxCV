@@ -10,9 +10,10 @@ Public Class frmSound
     Private lastMax As New Queue(Of Byte)
 
     Public Sub Init()
+        cmbDevices.Items.Clear()
         For i As Integer = 0 To Wave.WaveIn.DeviceCount - 1
             Dim deviceInfo As Wave.WaveInCapabilities = Wave.WaveIn.GetCapabilities(i)
-            cmbDevices.Items.Add(deviceInfo.ProductName & " (" & deviceInfo.ProductName & ")")
+            cmbDevices.Items.Add(deviceInfo.ProductName)
         Next
         If cmbDevices.Items.Count > 0 Then cmbDevices.SelectedIndex = 0
         chkMonitor.Checked = True

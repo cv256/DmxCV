@@ -17,7 +17,7 @@
     <LocationXPercent>0</LocationXPercent>
     <LocationYPercent>100</LocationYPercent>
     <RotationDegrees>20</RotationDegrees>
-    <FixtureModelFileName>C:\Users\Admin\Documents\Trabalho Particular\DmxCv\PublicDocuments\RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
+    <FixtureModelFileName>RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
     <LastFixedPreset>DMX Party</LastFixedPreset>
   </Fixture>
   <Fixture>
@@ -26,7 +26,7 @@
     <LocationXPercent>0</LocationXPercent>
     <LocationYPercent>0</LocationYPercent>
     <RotationDegrees>110</RotationDegrees>
-    <FixtureModelFileName>C:\Users\Admin\Documents\Trabalho Particular\DmxCv\PublicDocuments\RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
+    <FixtureModelFileName>RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
     <LastFixedPreset>DMX Party</LastFixedPreset>
   </Fixture>
   <Fixture>
@@ -35,7 +35,7 @@
     <LocationXPercent>100</LocationXPercent>
     <LocationYPercent>0</LocationYPercent>
     <RotationDegrees>200</RotationDegrees>
-    <FixtureModelFileName>C:\Users\Admin\Documents\Trabalho Particular\DmxCv\PublicDocuments\RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
+    <FixtureModelFileName>RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
     <LastFixedPreset>DMX Party</LastFixedPreset>
   </Fixture>
   <Fixture>
@@ -44,7 +44,7 @@
     <LocationXPercent>100</LocationXPercent>
     <LocationYPercent>100</LocationYPercent>
     <RotationDegrees>290</RotationDegrees>
-    <FixtureModelFileName>C:\Users\Admin\Documents\Trabalho Particular\DmxCv\PublicDocuments\RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
+    <FixtureModelFileName>RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
     <LastFixedPreset>DMX Party</LastFixedPreset>
   </Fixture>
   <Preset>
