@@ -206,18 +206,18 @@ Partial Class frmSound
         Me.PerformLayout()
 
     End Sub
-    Private WithEvents cmbDevices As System.Windows.Forms.ComboBox
-    Private WithEvents label2 As System.Windows.Forms.Label
+    Friend WithEvents cmbDevices As System.Windows.Forms.ComboBox
+    Friend WithEvents label2 As System.Windows.Forms.Label
     Friend WithEvents chkMonitor As System.Windows.Forms.CheckBox
     Friend WithEvents trCompressor As System.Windows.Forms.TrackBar
-    Private WithEvents Label1 As System.Windows.Forms.Label
-    Private WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents trDelay As System.Windows.Forms.TrackBar
-    Private WithEvents Label4 As System.Windows.Forms.Label
-    Private WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents trBeat As System.Windows.Forms.TrackBar
-    Private WithEvents Label6 As System.Windows.Forms.Label
-    Private WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents trNoise As System.Windows.Forms.TrackBar
 
 End Class

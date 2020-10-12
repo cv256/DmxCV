@@ -179,6 +179,7 @@
 
     Public Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Timer1.Enabled = False
+        _frmSound.CalculateSoundController()
         _frmSeq.Advance()
         Dim tmpDebug As String = "" ', cIdx As Integer = 0
         For Each f As FixtureTemplate In Fixtures
@@ -204,7 +205,6 @@
         End Get
         Set(ByVal value As Integer)
             Timer1.Interval = value
-            _frmSound.RefreshRate = value
         End Set
     End Property
 
