@@ -1,28 +1,44 @@
 ﻿Public Class frmSetup
+    Public txtTimer_Value As Integer
 
     Private Sub frmSetup_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtTimer.Text = _MainForm.RefreshRate
+        txtPort.Text = dmx.ComPort
     End Sub
 
     Private Sub btApply_Click(sender As Object, e As EventArgs) Handles btApply.Click
-        Dim res As Integer
+        If lbHertz.Text = "???" Then
+            Beep()
+            Return
+        End If
 
-        res = 9999999
+        _MainForm.RefreshRate = txtTimer.Text
         Try
-            res = CInt(txtTimer.Text)
+            dmx.ComPort = CInt(txtPort.Text)
         Catch ex As Exception
         End Try
-        If res < 20 Or res > 2000 Then
-            txtTimer.Focus()
-            txtTimer.BackColor = Color.Orange
-        Else
-            txtTimer.BackColor = SystemColors.Window
-            _MainForm.RefreshRate = txtTimer.Text
-        End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Configure()
+        clDMX.Configure()
     End Sub
+
+    Private Sub txtTimer_TextChanged(sender As Object, e As EventArgs) Handles txtTimer.TextChanged
+        txtTimer_Value = 9999999
+        Try
+            txtTimer_Value = CInt(txtTimer.Text)
+        Catch ex As Exception
+        End Try
+        If txtTimer_Value < 10 Or txtTimer_Value > 5000 Then
+            txtTimer.Focus()
+            txtTimer.BackColor = Color.Orange
+            lbHertz.Text = "???"
+        Else
+            txtTimer.BackColor = SystemColors.Window
+            lbHertz.Text = 1 / (txtTimer_Value / 1000) & " Hz"
+        End If
+    End Sub
+
+
 
 End Class

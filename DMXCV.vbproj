@@ -123,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="DMX.vb" />
     <Compile Include="Fixture.vb" />
     <Compile Include="frmSetup.Designer.vb">
       <DependentUpon>frmSetup.vb</DependentUpon>

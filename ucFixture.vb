@@ -12,6 +12,7 @@
         Me.Text = "DMX CV - " : For Each f As FixtureTemplate In Fixtures : Me.Text &= f.Name & "  " : Next
 
         Dim biggestBottom As Integer = 0, biggestRight As Integer = 0
+
         Dim tmpRd As RadioButton
         For Each p As Preset In _MainForm.Presets.Values
             tmpRd = New RadioButton With {.Name = "rd" & p.Name, .Text = p.Name, .Top = biggestBottom, .Left = 0, .AutoSize = True, .ForeColor = Color.White, .Tag = p.Name}
@@ -20,6 +21,7 @@
             biggestBottom = tmpRd.Bottom
             If tmpRd.Right > biggestRight Then biggestRight = tmpRd.Right
         Next
+
         Dim tmpBt As Button = Nothing
         For Each c As Control In Me.Controls
             If Not TypeOf (c) Is RadioButton Then Continue For
@@ -29,6 +31,7 @@
             AddHandler tmpBt.MouseUp, AddressOf bt_MouseUp
         Next
         If tmpBt IsNot Nothing Then biggestRight = tmpBt.Right
+
         Dim tmplabel As Label, tmpTxtSound As TextBox, tmpTxtSeq As TextBox
         For Each c As ChannelType In ChannelTypes.Enum
             If ChannelShow(c) = ChannelData.Modes.Hide Then Continue For
@@ -44,6 +47,7 @@
             If tmpTr.Right > biggestRight Then biggestRight = tmpTr.Right
         Next
         biggestBottom = tmpTxtSeq.Bottom
+
         tmplabel = New LinkLabel With {.Name = "lbSound", .Text = "Sound Controller", .Top = tmpTxtSound.Top, .Left = 0, .AutoSize = False, .Width = tmpBt.Right, .Height = tmpTxtSeq.Height, .ForeColor = Color.LightBlue, .Cursor = Cursors.Hand}
         Me.Controls.Add(tmplabel)
         AddHandler tmplabel.Click, AddressOf lbSound_Click

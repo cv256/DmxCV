@@ -1,56 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<DMXCV Version="1.0.0.0">
-  <SaveDate>2016-04-28T11:04:55.5322982+01:00</SaveDate>
-  <RefreshRate>50</RefreshRate>
-  <Offline>true</Offline>
+<DMXCV Version="1.0.16.0">
+  <SaveDate>2020-10-24T00:36:47.6823341+01:00</SaveDate>
+  <RefreshRate>30</RefreshRate>
+  <Offline>false</Offline>
   <Debug>false</Debug>
   <Preview>true</Preview>
+  <Port>5</Port>
   <Sequencer>
     <ActiveSequence>Rainbow</ActiveSequence>
-    <BaseSpeed>12</BaseSpeed>
+    <BaseSpeed>10</BaseSpeed>
     <SoundSpeed>70</SoundSpeed>
     <Mode>Flood</Mode>
   </Sequencer>
   <Fixture>
-    <Name>Luz SW</Name>
+    <Name>Luz 0</Name>
     <Address>0</Address>
     <LocationXPercent>0</LocationXPercent>
     <LocationYPercent>100</LocationYPercent>
     <RotationDegrees>20</RotationDegrees>
-    <FixtureModelFileName>RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
+    <FixtureModelFileName>C:\Users\Admin\Documents\Trabalho Particular\DmxCv\PublicDocuments\RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
     <LastFixedPreset>DMX Party</LastFixedPreset>
   </Fixture>
   <Fixture>
-    <Name>Luz NW</Name>
+    <Name>Luz 8</Name>
     <Address>8</Address>
     <LocationXPercent>0</LocationXPercent>
     <LocationYPercent>0</LocationYPercent>
     <RotationDegrees>110</RotationDegrees>
-    <FixtureModelFileName>RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
+    <FixtureModelFileName>C:\Users\Admin\Documents\Trabalho Particular\DmxCv\PublicDocuments\RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
     <LastFixedPreset>DMX Party</LastFixedPreset>
   </Fixture>
   <Fixture>
-    <Name>Luz NE</Name>
+    <Name>Luz 16</Name>
     <Address>16</Address>
     <LocationXPercent>100</LocationXPercent>
     <LocationYPercent>0</LocationYPercent>
     <RotationDegrees>200</RotationDegrees>
-    <FixtureModelFileName>RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
+    <FixtureModelFileName>C:\Users\Admin\Documents\Trabalho Particular\DmxCv\PublicDocuments\RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
     <LastFixedPreset>DMX Party</LastFixedPreset>
   </Fixture>
   <Fixture>
-    <Name>Luz SE</Name>
+    <Name>Luz 24</Name>
     <Address>24</Address>
     <LocationXPercent>100</LocationXPercent>
     <LocationYPercent>100</LocationYPercent>
     <RotationDegrees>290</RotationDegrees>
-    <FixtureModelFileName>RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
+    <FixtureModelFileName>C:\Users\Admin\Documents\Trabalho Particular\DmxCv\PublicDocuments\RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
     <LastFixedPreset>DMX Party</LastFixedPreset>
   </Fixture>
   <Preset>
     <Name>Strob Colored</Name>
     <AffectedFixture>
-      <Name>Luz SW</Name>
+      <Name>Luz 0</Name>
       <SeqControllerIdx>0</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -75,7 +76,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz NW</Name>
+      <Name>Luz 8</Name>
       <SeqControllerIdx>1</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -100,7 +101,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz NE</Name>
+      <Name>Luz 16</Name>
       <SeqControllerIdx>2</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -125,7 +126,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz SE</Name>
+      <Name>Luz 24</Name>
       <SeqControllerIdx>3</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -153,7 +154,7 @@
   <Preset>
     <Name>Strob Power</Name>
     <AffectedFixture>
-      <Name>Luz SW</Name>
+      <Name>Luz 0</Name>
       <SeqControllerIdx>0</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -178,7 +179,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz NW</Name>
+      <Name>Luz 8</Name>
       <SeqControllerIdx>1</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -203,7 +204,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz NE</Name>
+      <Name>Luz 16</Name>
       <SeqControllerIdx>2</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -228,7 +229,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz SE</Name>
+      <Name>Luz 24</Name>
       <SeqControllerIdx>3</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -256,7 +257,7 @@
   <Preset>
     <Name>Flash</Name>
     <AffectedFixture>
-      <Name>Luz SW</Name>
+      <Name>Luz 0</Name>
       <SeqControllerIdx>0</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -281,7 +282,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz NW</Name>
+      <Name>Luz 8</Name>
       <SeqControllerIdx>1</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -306,7 +307,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz NE</Name>
+      <Name>Luz 16</Name>
       <SeqControllerIdx>2</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -331,7 +332,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz SE</Name>
+      <Name>Luz 24</Name>
       <SeqControllerIdx>3</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -359,7 +360,7 @@
   <Preset>
     <Name>Rainbow RGB</Name>
     <AffectedFixture>
-      <Name>Luz SW</Name>
+      <Name>Luz 0</Name>
       <SeqControllerIdx>0</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -384,7 +385,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz NW</Name>
+      <Name>Luz 8</Name>
       <SeqControllerIdx>1</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -409,7 +410,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz NE</Name>
+      <Name>Luz 16</Name>
       <SeqControllerIdx>2</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -434,7 +435,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz SE</Name>
+      <Name>Luz 24</Name>
       <SeqControllerIdx>3</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -462,7 +463,7 @@
   <Preset>
     <Name>Rainbow All Colors</Name>
     <AffectedFixture>
-      <Name>Luz SW</Name>
+      <Name>Luz 0</Name>
       <SeqControllerIdx>0</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -487,7 +488,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz NW</Name>
+      <Name>Luz 8</Name>
       <SeqControllerIdx>1</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -512,7 +513,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz NE</Name>
+      <Name>Luz 16</Name>
       <SeqControllerIdx>2</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -537,7 +538,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz SE</Name>
+      <Name>Luz 24</Name>
       <SeqControllerIdx>3</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -565,7 +566,7 @@
   <Preset>
     <Name>Music Colored</Name>
     <AffectedFixture>
-      <Name>Luz SW</Name>
+      <Name>Luz 0</Name>
       <SeqControllerIdx>0</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -590,7 +591,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz NW</Name>
+      <Name>Luz 8</Name>
       <SeqControllerIdx>1</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -615,7 +616,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz NE</Name>
+      <Name>Luz 16</Name>
       <SeqControllerIdx>2</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -640,7 +641,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz SE</Name>
+      <Name>Luz 24</Name>
       <SeqControllerIdx>3</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -668,7 +669,7 @@
   <Preset>
     <Name>Music Power</Name>
     <AffectedFixture>
-      <Name>Luz SW</Name>
+      <Name>Luz 0</Name>
       <SeqControllerIdx>0</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -693,7 +694,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz NW</Name>
+      <Name>Luz 8</Name>
       <SeqControllerIdx>1</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -718,7 +719,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz NE</Name>
+      <Name>Luz 16</Name>
       <SeqControllerIdx>2</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -743,7 +744,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz SE</Name>
+      <Name>Luz 24</Name>
       <SeqControllerIdx>3</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -771,7 +772,7 @@
   <Preset>
     <Name>DMX Party</Name>
     <AffectedFixture>
-      <Name>Luz SW</Name>
+      <Name>Luz 0</Name>
       <SeqControllerIdx>0</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -831,7 +832,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz NW</Name>
+      <Name>Luz 8</Name>
       <SeqControllerIdx>1</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -891,7 +892,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz NE</Name>
+      <Name>Luz 16</Name>
       <SeqControllerIdx>2</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -951,7 +952,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz SE</Name>
+      <Name>Luz 24</Name>
       <SeqControllerIdx>3</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>

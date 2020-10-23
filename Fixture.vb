@@ -15,11 +15,10 @@
                 strResult = "offline"
                 Channels(c.ChannelType).LastSentValue = v
             Else
-                If ChannelSet(Address + Channels(c.ChannelType).Address, v) Then
+                strResult = DMX.Send(Address + Channels(c.ChannelType).Address, v)
+                If strResult.StartsWith("OK") Then
                     Channels(c.ChannelType).LastSentValue = v
                     strResult = ""
-                Else
-                    strResult = "ERROR"
                 End If
             End If
             strDebug &= "   Ch " & (Address + Channels(c.ChannelType).Address) & " = " & v & "   result = " & strResult & "   (" & c.ChannelType.ToString & ")" & vbCrLf

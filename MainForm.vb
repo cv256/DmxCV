@@ -54,7 +54,7 @@
 
     Private Sub PaintBackground(sender As Object, e As PaintEventArgs) Handles Me.Paint
         If Not _MainForm.Visible OrElse _MainForm.WindowState = FormWindowState.Minimized Then Return
-        If _MainForm.Debug IsNot Nothing AndAlso _MainForm.Debug.Visible Then _MainForm.Debug.AppendText("Form.Paint " & Now.ToLongTimeString & vbCrLf)
+        ' If _MainForm.Debug IsNot Nothing AndAlso _MainForm.Debug.Visible Then _MainForm.Debug.AppendText("Form.Paint " & Now.ToLongTimeString & vbCrLf)
 
         Dim currentContext As BufferedGraphicsContext = BufferedGraphicsManager.Current
         Dim myBuffer As BufferedGraphics = currentContext.Allocate(Me.CreateGraphics, Me.DisplayRectangle)
@@ -246,7 +246,8 @@
               New XElement("RefreshRate", RefreshRate),
               New XElement("Offline", ckOffline.Checked),
               New XElement("Debug", ckDebug.Checked),
-              New XElement("Preview", ckPreview.Checked)
+              New XElement("Preview", ckPreview.Checked),
+              New XElement("Port", dmx.ComPort)
             )
 
             root.Add(_frmSeq.Serialize())
@@ -281,10 +282,11 @@
             Dim xDoc As XDocument
             xDoc = XDocument.Load(pFileName)
             With xDoc.<DMXCV>
-                RefreshRate = Math.Max(CInt(.<RefreshRate>.Value), 20)
+                RefreshRate = Math.Max(CInt(.<RefreshRate>.Value), 10)
                 ckOffline.CheckState = IIf(.<Offline>.Value = "true", CheckState.Checked, CheckState.Unchecked)
                 ckDebug.CheckState = IIf(.<Debug>.Value = "true", CheckState.Checked, CheckState.Unchecked)
                 ckPreview.CheckState = IIf(.<Preview>.Value = "true", CheckState.Checked, CheckState.Unchecked)
+                dmx.ComPort = CInt(.<Port>.Value)
                 For Each xFixt As XElement In .<Fixture>
                     Fixtures.Add(New FixtureTemplate(xFixt))
                 Next
@@ -350,6 +352,15 @@
         If e.Button = MouseButtons.Right Then
             System.Diagnostics.Process.Start(FileName)
         End If
+    End Sub
+
+    Private Sub MainForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        Timer1 = Nothing
+        If _frmSound IsNot Nothing Then _frmSound.Close()
+        If _frmSeq IsNot Nothing Then _frmSeq.Close()
+        If Debug IsNot Nothing Then Debug.Close()
+        dmx = Nothing
+        End
     End Sub
 
 End Class

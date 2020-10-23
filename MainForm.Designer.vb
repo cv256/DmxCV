@@ -31,6 +31,7 @@ Partial Class MainForm
         Me.btSetup = New System.Windows.Forms.Button()
         Me.btLoad = New System.Windows.Forms.Button()
         Me.btSave = New System.Windows.Forms.Button()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.SuspendLayout()
         '
         'btnAllFixtures
@@ -112,6 +113,7 @@ Partial Class MainForm
         Me.btLoad.Size = New System.Drawing.Size(67, 20)
         Me.btLoad.TabIndex = 10
         Me.btLoad.Text = "Load"
+        Me.ToolTip1.SetToolTip(Me.btLoad, "Right-click = edit current xml file using notepad")
         Me.btLoad.UseVisualStyleBackColor = False
         '
         'btSave
@@ -156,4 +158,5 @@ Partial Class MainForm
     Private WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents btLoad As Button
     Friend WithEvents btSave As Button
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

@@ -1,14 +1,9 @@
 ﻿Module Utils
 
-    ' Declare Functions for uDMX configurations and data transfer
-    Public Declare Function Configure Lib "uDMX.dll" () As Integer
-    Public Declare Function ChannelSet Lib "uDMX.dll" (ByVal Channel As Int32, ByVal Data As Int32) As Boolean
-    Public Declare Function ChannelsSet Lib "uDMX.dll" (ByVal ChanCnt As Int32, ByVal ChanFirst As Int32, ByRef FirstChan As Byte) As Boolean
-
+    Public dmx As New clDMX
     Public _Offline As Boolean
     Public _MainForm As MainForm
     Public _Grads2Radians = Math.PI / 180
-
 
     Public Function EnumByString(pTypeDescr As String, pType As System.Type) As Integer
         Dim i As Integer = 0, res As String = ""
