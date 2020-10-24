@@ -8,12 +8,14 @@
 // Timer 2 is used. 
 #include <DmxSimple.h>
 
+#define MAXCH 34
+
 unsigned long waiting=0;
 
 void setup() {
   // put your setup code here, to run once:
   
-  DmxSimple.maxChannel(64);
+  DmxSimple.maxChannel(MAXCH);
   DmxSimple.usePin(3);
   
   Serial.begin(9600);
@@ -26,17 +28,17 @@ void loop() {
   if (Serial.available() >= 2) {
     byte channel = Serial.read();
 
-    if (channel>64) {
+    if (channel>MAXCH) {
       Serial.print("INVALID");
       Serial.println(channel);   
     }
     else {
       byte value = Serial.read();
       DmxSimple.write(channel, value);
-      Serial.print("OK");
-      Serial.print(channel);
-      Serial.print("=");
-      Serial.println(value);
+      // Serial.print("OK");
+      // Serial.print(channel);
+      // Serial.print("=");
+      // Serial.println(value);
       waiting = 0;
     }
 

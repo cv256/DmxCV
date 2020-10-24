@@ -16,9 +16,10 @@ Public Class Preset
         Next
     End Sub
 
-    Public Function ChannelShow(pChannelType As ChannelType) As ChannelData.Modes
+    Public Function ChannelShow(pFixtures As List(Of FixtureTemplate), pChannelType As ChannelType) As ChannelData.Modes
         Dim res As ChannelData.Modes = ChannelData.Modes.Hide
         For Each f As FixtureTemplate In Me.AffectedFixtures.Keys
+            If Not pFixtures.Contains(f) Then Continue For
             If Not Me.AffectedFixtures.ContainsKey(f) Then Continue For
             If Me.AffectedFixtures(f).ChannelMode(pChannelType) = ChannelData.Modes.Hide Then Continue For
             If Me.AffectedFixtures(f).ChannelMode(pChannelType) = ChannelData.Modes.Show Then Return Me.AffectedFixtures(f).ChannelMode(pChannelType)
@@ -26,55 +27,62 @@ Public Class Preset
         Return res
     End Function
 
-    Public Property UserValue(pChannelType As ChannelType) As Integer
+    Public Property UserValue(pFixtures As List(Of FixtureTemplate), pChannelType As ChannelType) As Integer
         Get
             Dim res As Integer = Channel.ValueUnkown
             For Each f As FixtureTemplate In Me.AffectedFixtures.Keys
+                If Not pFixtures.Contains(f) Then Continue For
                 If Not f.Channels.ContainsKey(pChannelType) Then Continue For
                 Return Me.AffectedFixtures(f).UserValue(pChannelType)
             Next
             Return res
         End Get
         Set(value As Integer)
-            For Each f As FixtureValues In Me.AffectedFixtures.Values
-                f.UserValue(pChannelType) = value
+            For Each f As KeyValuePair(Of FixtureTemplate, FixtureValues) In Me.AffectedFixtures
+                If Not pFixtures.Contains(f.Key) Then Continue For
+                f.Value.UserValue(pChannelType) = value
             Next
         End Set
     End Property
-    Public Property SoundControllerPercent(pChannelType As ChannelType) As Integer
+    Public Property SoundControllerPercent(pFixtures As List(Of FixtureTemplate), pChannelType As ChannelType) As Integer
         Get
             Dim res As Integer = Channel.ValueUnkown
             For Each f As FixtureTemplate In Me.AffectedFixtures.Keys
+                If Not pFixtures.Contains(f) Then Continue For
                 If Not f.Channels.ContainsKey(pChannelType) Then Continue For
                 Return Me.AffectedFixtures(f).SoundControllerPercent(pChannelType)
             Next
             Return res
         End Get
         Set(value As Integer)
-            For Each f As FixtureValues In Me.AffectedFixtures.Values
-                f.SoundControllerPercent(pChannelType) = value
+            For Each f As KeyValuePair(Of FixtureTemplate, FixtureValues) In Me.AffectedFixtures
+                If Not pFixtures.Contains(f.Key) Then Continue For
+                f.Value.SoundControllerPercent(pChannelType) = value
             Next
         End Set
     End Property
-    Public Property SeqControllerPercent(pChannelType As ChannelType) As Integer
+    Public Property SeqControllerPercent(pFixtures As List(Of FixtureTemplate), pChannelType As ChannelType) As Integer
         Get
             Dim res As Integer = Channel.ValueUnkown
             For Each f As FixtureTemplate In Me.AffectedFixtures.Keys
+                If Not pFixtures.Contains(f) Then Continue For
                 If Not f.Channels.ContainsKey(pChannelType) Then Continue For
                 Return Me.AffectedFixtures(f).SeqControllerPercent(pChannelType)
             Next
             Return res
         End Get
         Set(value As Integer)
-            For Each f As FixtureValues In Me.AffectedFixtures.Values
-                f.SeqControllerPercent(pChannelType) = value
+            For Each f As KeyValuePair(Of FixtureTemplate, FixtureValues) In Me.AffectedFixtures
+                If Not pFixtures.Contains(f.Key) Then Continue For
+                f.Value.SeqControllerPercent(pChannelType) = value
             Next
         End Set
     End Property
-    Public ReadOnly Property TotalValue(pChannelType As ChannelType) As Integer
+    Public ReadOnly Property TotalValue(pFixtures As List(Of FixtureTemplate), pChannelType As ChannelType) As Integer
         Get
             Dim res As Integer = 0
             For Each f As FixtureTemplate In Me.AffectedFixtures.Keys
+                If Not pFixtures.Contains(f) Then Continue For
                 If Not f.Channels.ContainsKey(pChannelType) Then Continue For
                 Return Me.AffectedFixtures(f).TotalValue(pChannelType)
             Next
@@ -120,7 +128,12 @@ Public Class FixtureValues
     Friend Sub New(ByVal fld As XElement)
         SeqControllerIdx = fld.<SeqControllerIdx>.Value
         For Each xPc As XElement In fld.<PresetChannel>
-            Channels.Add(ChannelTypes.ByName(xPc.<Type>.Value), New ChannelData(ChannelTypes.ByName(xPc.<Type>.Value), EnumByString(xPc.<Mode>.Value, GetType(ChannelData.Modes)), CInt(xPc.<Value>.Value), CInt(xPc.<SoundControllerPercent>.Value), CInt(xPc.<SeqControllerPercent>.Value)))
+            Channels.Add(ChannelTypes.ByName(xPc.<Type>.Value), New ChannelData(
+                ChannelTypes.ByName(xPc.<Type>.Value),
+                EnumByString(xPc.<Mode>.Value, GetType(ChannelData.Modes)),
+                CInt(xPc.<Value>.Value),
+                CInt(xPc.<SoundControllerPercent>.Value),
+                CInt(xPc.<SeqControllerPercent>.Value)))
         Next
     End Sub
 

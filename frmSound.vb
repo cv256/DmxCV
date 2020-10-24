@@ -8,14 +8,21 @@ Public Class frmSound
     Private myCapturer 'As Wave.WaveIn
     Private lastMax As New Queue(Of Byte)
 
-    Public Sub Init()
+    Public Sub Init(pDevice As String, pCompressor As Integer, pDelay As Integer, pNoisegate As Integer, pBeat As Integer)
         cmbDevices.Items.Clear()
         cmbDevices.Items.Add("Loopback")
         For i As Integer = 0 To Wave.WaveIn.DeviceCount - 1
             Dim deviceInfo As Wave.WaveInCapabilities = Wave.WaveIn.GetCapabilities(i)
             cmbDevices.Items.Add(deviceInfo.ProductName)
+            If deviceInfo.ProductName = pDevice Then cmbDevices.SelectedIndex = cmbDevices.Items.Count - 1
         Next
-        If cmbDevices.Items.Count > 0 Then cmbDevices.SelectedIndex = 0
+        If cmbDevices.SelectedIndex < 0 AndAlso cmbDevices.Items.Count > 0 Then cmbDevices.SelectedIndex = 0
+
+        trCompressor.Value = Math.Min(Math.Max(pCompressor, trCompressor.Minimum), trCompressor.Maximum)
+        trDelay.Value = Math.Min(Math.Max(pDelay, trDelay.Minimum), trDelay.Maximum)
+        trNoise.Value = Math.Min(Math.Max(pNoisegate, trNoise.Minimum), trNoise.Maximum)
+        trBeat.Value = Math.Min(Math.Max(pBeat, trBeat.Minimum), trBeat.Maximum)
+
         chkMonitor.Checked = True
         Me.TopMost = True
     End Sub
@@ -133,5 +140,16 @@ Public Class frmSound
         End If
         maxInput = 0
     End Sub
+
+    Friend Function Serialize() As XElement
+        Dim res As New XElement("Sound",
+            New XElement("Device", cmbDevices.SelectedItem),
+            New XElement("Compressor", trCompressor.Value),
+            New XElement("Delay", trDelay.Value),
+            New XElement("Noisegate", trNoise.Value),
+            New XElement("Beat", trBeat.Value)
+        )
+        Return res
+    End Function
 
 End Class

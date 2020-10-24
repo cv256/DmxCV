@@ -3,7 +3,7 @@
     Public dmx As New clDMX
     Public _Offline As Boolean
     Public _MainForm As MainForm
-    Public _Grads2Radians = Math.PI / 180
+    Public _Grads2Radians As Single = Math.PI / 180
 
     Public Function EnumByString(pTypeDescr As String, pType As System.Type) As Integer
         Dim i As Integer = 0, res As String = ""

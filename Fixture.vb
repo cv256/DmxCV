@@ -21,7 +21,7 @@
                     strResult = ""
                 End If
             End If
-            strDebug &= "   Ch " & (Address + Channels(c.ChannelType).Address) & " = " & v & "   result = " & strResult & "   (" & c.ChannelType.ToString & ")" & vbCrLf
+            strDebug &= "   Ch " & (Address + Channels(c.ChannelType).Address) & " = " & v & If(strResult > "", "   result = " & strResult, "") & "   (" & c.ChannelType.ToString & ")" & vbCrLf
         Next
         Return strDebug
     End Function
@@ -35,8 +35,8 @@
     End Function
 
     Public Function LightArea(pFormClientSize As Size) As Point()
-        Dim fLen As Decimal = 93 ' percentage
-        Dim fOverture As Decimal = 13 / 2 ' grads
+        Dim fLen As Decimal = 92 ' percentage
+        Const fOverture As Decimal = 13 / 2 ' grads
         fLen = (pFormClientSize.Width - 7) / 100 * fLen
         With MyRectangle(pFormClientSize)
             Dim res(2) As Point
@@ -54,8 +54,11 @@
             OrElse Channels(ChannelTypes.Blue).LastSentValue < 0 OrElse Channels(ChannelTypes.Blue).LastSentValue > 255 _
             OrElse Channels(ChannelTypes.Intensity).LastSentValue < 0 OrElse Channels(ChannelTypes.Intensity).LastSentValue > 255 _
             Then Return New Drawing2D.HatchBrush(Drawing2D.HatchStyle.Cross, Color.Gray)
-        ' todo: misturar o WHITE com as cores
-        Return New SolidBrush(Color.FromArgb(Channels(ChannelTypes.Intensity).LastSentValue / 1.5, Channels(ChannelTypes.Red).LastSentValue, Channels(ChannelTypes.Green).LastSentValue, Channels(ChannelTypes.Blue).LastSentValue))
+        Return New SolidBrush(Color.FromArgb(
+                       Channels(ChannelTypes.Intensity).LastSentValue / 1.5,
+                       (Channels(ChannelTypes.Red).LastSentValue + Channels(ChannelTypes.White).LastSentValue) / 2,
+                       (Channels(ChannelTypes.Green).LastSentValue + Channels(ChannelTypes.White).LastSentValue) / 2,
+                       (Channels(ChannelTypes.Blue).LastSentValue + Channels(ChannelTypes.White).LastSentValue) / 2))
     End Function
 
     Friend Sub New(ByVal fld As XElement)

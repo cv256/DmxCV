@@ -26,13 +26,13 @@
         '    If MsgBox(TypeName(ex) & vbCrLf & vbCrLf & ex.Message, MsgBoxStyle.OkCancel Or MsgBoxStyle.Exclamation) = MsgBoxResult.Cancel Then End
         'End Try
 
-        _frmSound.Init()
-
         For Each f As FixtureTemplate In Me.Fixtures
             f.Update()
         Next
         _LastUpdate = Now
         PaintBackground(Me, New PaintEventArgs(Me.CreateGraphics, Nothing))
+
+        btnAllFixtures.PerformClick()
     End Sub
 
 
@@ -65,9 +65,22 @@
                 .Clear(Me.BackColor)
             End If
             For Each f As FixtureTemplate In Fixtures
+                ' draw the fixture's light:
+                'Dim fLen As Integer = 93 ' percentage
+                'fLen = (Me.ClientSize.Width - 7) / 100 * fLen
+                'With f.MyRectangle(Me.ClientSize)
+                '    Dim fX As Integer = .X + .Width / 2
+                '    Dim fY As Integer = .Y + .Height / 2
+                '    For overt As Decimal = 0 To 5 Step 0.2
+                '        myBuffer.Graphics.DrawLine(f.LightPen, fX, fY, CInt(fX + fLen * Math.Sin((f.Rotation + 0.1 + overt) * _Grads2Radians)),
+                '                          CInt(fY + fLen * -Math.Cos((f.Rotation + 0.1 + overt) * _Grads2Radians)))
+                '        myBuffer.Graphics.DrawLine(f.LightPen, fX, fY, CInt(fX + fLen * Math.Sin((f.Rotation - 0.1 - overt) * _Grads2Radians)),
+                '                          CInt(fY + fLen * -Math.Cos((f.Rotation - 0.1 - overt) * _Grads2Radians)))
+                '    Next
+                'End With
+                ' draw the fixture :
                 Dim tmpRect As Rectangle = f.MyRectangle(Me.ClientSize)
                 .FillPolygon(f.LightBrush, f.LightArea(Me.ClientSize))
-                ' todo: pintar o white
                 .FillEllipse(Brushes.DimGray, tmpRect)
                 Dim tmpPoint As Point = tmpRect.Location
                 tmpPoint.Offset(0, tmpRect.Width / 2 - 4)
@@ -240,7 +253,6 @@
         If pFileName.Length = 0 Then pFileName = Me.FileName
 
         Try
-            Dim xDoc As XDocument = New XDocument
             Dim root As New XElement("DMXCV",
               New XElement("SaveDate", Now),
               New XElement("RefreshRate", RefreshRate),
@@ -250,6 +262,9 @@
               New XElement("Port", dmx.ComPort)
             )
 
+            root.Add(New XAttribute("Version", My.Application.Info.Version.ToString))
+
+            root.Add(_frmSound.Serialize())
             root.Add(_frmSeq.Serialize())
 
             For Each f As FixtureTemplate In Me.Fixtures
@@ -260,7 +275,7 @@
                 root.Add(f.Serialize)
             Next
 
-            root.Add(New XAttribute("Version", My.Application.Info.Version.ToString))
+            Dim xDoc As XDocument = New XDocument
             xDoc.Add(root)
             xDoc.Declaration = New XDeclaration("1.0", "UTF-8", "yes")
             xDoc.Save(pFileName, SaveOptions.None) ' save indentado 
@@ -315,7 +330,10 @@
                         End
                     End If
                 Next
+
                 _frmSeq.Init(.<Sequencer>.<ActiveSequence>.Value, .<Sequencer>.<BaseSpeed>.Value, .<Sequencer>.<SoundSpeed>.Value, .<Sequencer>.<Mode>.Value)
+                _frmSound.Init(.<Sound>.<Device>.Value, .<Sound>.<Compressor>.Value, .<Sound>.<Delay>.Value, .<Sound>.<Noisegate>.Value, .<Sound>.<Beat>.Value)
+
             End With
 
             Me.FileName = pFileName

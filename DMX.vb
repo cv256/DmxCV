@@ -46,18 +46,23 @@ Public Class clDMX
             End If
 
         Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
             Return ex.Message
         End Try
 
         Return "???"
     End Function
 
-    Private Sub SerialPort1_DataReceived(sender As Object, e As SerialDataReceivedEventArgs) Handles SerialPort1.DataReceived
-
+    Private Sub SerialPort1_DataReceived(sender As SerialPort, e As SerialDataReceivedEventArgs) Handles SerialPort1.DataReceived
+        Dim res As String = ""
+        While SerialPort1.BytesToRead > 0
+            res &= SerialPort1.ReadExisting()
+        End While
+        MsgBox(res, MsgBoxStyle.Critical)
     End Sub
 
-    Private Sub SerialPort1_ErrorReceived(sender As Object, e As SerialErrorReceivedEventArgs) Handles SerialPort1.ErrorReceived
-
+    Private Sub SerialPort1_ErrorReceived(sender As SerialPort, e As SerialErrorReceivedEventArgs) Handles SerialPort1.ErrorReceived
+        MsgBox("SerialPort1.ErrorReceived", MsgBoxStyle.Critical)
     End Sub
 
 End Class

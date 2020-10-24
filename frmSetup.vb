@@ -35,7 +35,7 @@
             lbHertz.Text = "???"
         Else
             txtTimer.BackColor = SystemColors.Window
-            lbHertz.Text = 1 / (txtTimer_Value / 1000) & " Hz"
+            lbHertz.Text = CInt(1 / (txtTimer_Value / 1000)) & " Hz"
         End If
     End Sub
 

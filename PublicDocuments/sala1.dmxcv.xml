@@ -1,20 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<DMXCV Version="1.0.16.0">
-  <SaveDate>2020-10-24T00:36:47.6823341+01:00</SaveDate>
-  <RefreshRate>30</RefreshRate>
+<DMXCV Version="1.1.16.0">
+  <SaveDate>2020-10-24T19:34:20.4415943+01:00</SaveDate>
+  <RefreshRate>50</RefreshRate>
   <Offline>false</Offline>
   <Debug>false</Debug>
   <Preview>true</Preview>
-  <Port>5</Port>
+  <Port>0</Port>
+  <Sound>
+    <Device>Microphone do Portatil (High De</Device>
+    <Compressor>66</Compressor>
+    <Delay>50</Delay>
+    <Noisegate>0</Noisegate>
+    <Beat>95</Beat>
+  </Sound>
   <Sequencer>
     <ActiveSequence>Rainbow</ActiveSequence>
-    <BaseSpeed>10</BaseSpeed>
-    <SoundSpeed>70</SoundSpeed>
+    <BaseSpeed>9</BaseSpeed>
+    <SoundSpeed>7</SoundSpeed>
     <Mode>Flood</Mode>
   </Sequencer>
   <Fixture>
-    <Name>Luz 0</Name>
-    <Address>0</Address>
+    <Name>Luz 2</Name>
+    <Address>2</Address>
     <LocationXPercent>0</LocationXPercent>
     <LocationYPercent>100</LocationYPercent>
     <RotationDegrees>20</RotationDegrees>
@@ -22,8 +29,8 @@
     <LastFixedPreset>DMX Party</LastFixedPreset>
   </Fixture>
   <Fixture>
-    <Name>Luz 8</Name>
-    <Address>8</Address>
+    <Name>Luz 10</Name>
+    <Address>10</Address>
     <LocationXPercent>0</LocationXPercent>
     <LocationYPercent>0</LocationYPercent>
     <RotationDegrees>110</RotationDegrees>
@@ -31,8 +38,8 @@
     <LastFixedPreset>DMX Party</LastFixedPreset>
   </Fixture>
   <Fixture>
-    <Name>Luz 16</Name>
-    <Address>16</Address>
+    <Name>Luz 18</Name>
+    <Address>18</Address>
     <LocationXPercent>100</LocationXPercent>
     <LocationYPercent>0</LocationYPercent>
     <RotationDegrees>200</RotationDegrees>
@@ -40,8 +47,8 @@
     <LastFixedPreset>DMX Party</LastFixedPreset>
   </Fixture>
   <Fixture>
-    <Name>Luz 24</Name>
-    <Address>24</Address>
+    <Name>Luz 26</Name>
+    <Address>26</Address>
     <LocationXPercent>100</LocationXPercent>
     <LocationYPercent>100</LocationYPercent>
     <RotationDegrees>290</RotationDegrees>
@@ -51,7 +58,7 @@
   <Preset>
     <Name>Strob Colored</Name>
     <AffectedFixture>
-      <Name>Luz 0</Name>
+      <Name>Luz 2</Name>
       <SeqControllerIdx>0</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -72,11 +79,11 @@
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>146</Value>
+        <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz 8</Name>
+      <Name>Luz 10</Name>
       <SeqControllerIdx>1</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -97,11 +104,11 @@
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>146</Value>
+        <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz 16</Name>
+      <Name>Luz 18</Name>
       <SeqControllerIdx>2</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -122,11 +129,11 @@
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>146</Value>
+        <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz 24</Name>
+      <Name>Luz 26</Name>
       <SeqControllerIdx>3</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -147,14 +154,14 @@
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>146</Value>
+        <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
   </Preset>
   <Preset>
     <Name>Strob Power</Name>
     <AffectedFixture>
-      <Name>Luz 0</Name>
+      <Name>Luz 2</Name>
       <SeqControllerIdx>0</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -175,11 +182,11 @@
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>183</Value>
+        <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz 8</Name>
+      <Name>Luz 10</Name>
       <SeqControllerIdx>1</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -200,11 +207,11 @@
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>183</Value>
+        <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz 16</Name>
+      <Name>Luz 18</Name>
       <SeqControllerIdx>2</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -225,11 +232,11 @@
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>183</Value>
+        <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz 24</Name>
+      <Name>Luz 26</Name>
       <SeqControllerIdx>3</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -250,14 +257,14 @@
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>183</Value>
+        <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
   </Preset>
   <Preset>
     <Name>Flash</Name>
     <AffectedFixture>
-      <Name>Luz 0</Name>
+      <Name>Luz 2</Name>
       <SeqControllerIdx>0</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -278,11 +285,11 @@
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>5</Value>
+        <Value>7</Value>
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz 8</Name>
+      <Name>Luz 10</Name>
       <SeqControllerIdx>1</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -303,11 +310,11 @@
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>5</Value>
+        <Value>7</Value>
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz 16</Name>
+      <Name>Luz 18</Name>
       <SeqControllerIdx>2</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -328,11 +335,11 @@
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>5</Value>
+        <Value>7</Value>
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz 24</Name>
+      <Name>Luz 26</Name>
       <SeqControllerIdx>3</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -353,14 +360,14 @@
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>5</Value>
+        <Value>7</Value>
       </PresetChannel>
     </AffectedFixture>
   </Preset>
   <Preset>
     <Name>Rainbow RGB</Name>
     <AffectedFixture>
-      <Name>Luz 0</Name>
+      <Name>Luz 2</Name>
       <SeqControllerIdx>0</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -381,11 +388,11 @@
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>128</Value>
+        <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz 8</Name>
+      <Name>Luz 10</Name>
       <SeqControllerIdx>1</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -406,11 +413,11 @@
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>128</Value>
+        <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz 16</Name>
+      <Name>Luz 18</Name>
       <SeqControllerIdx>2</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -431,11 +438,11 @@
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>128</Value>
+        <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz 24</Name>
+      <Name>Luz 26</Name>
       <SeqControllerIdx>3</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -456,14 +463,14 @@
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>128</Value>
+        <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
   </Preset>
   <Preset>
     <Name>Rainbow All Colors</Name>
     <AffectedFixture>
-      <Name>Luz 0</Name>
+      <Name>Luz 2</Name>
       <SeqControllerIdx>0</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -484,11 +491,11 @@
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>128</Value>
+        <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz 8</Name>
+      <Name>Luz 10</Name>
       <SeqControllerIdx>1</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -509,11 +516,11 @@
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>128</Value>
+        <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz 16</Name>
+      <Name>Luz 18</Name>
       <SeqControllerIdx>2</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -534,11 +541,11 @@
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>128</Value>
+        <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz 24</Name>
+      <Name>Luz 26</Name>
       <SeqControllerIdx>3</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -559,14 +566,14 @@
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>128</Value>
+        <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
   </Preset>
   <Preset>
     <Name>Music Colored</Name>
     <AffectedFixture>
-      <Name>Luz 0</Name>
+      <Name>Luz 2</Name>
       <SeqControllerIdx>0</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -591,7 +598,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz 8</Name>
+      <Name>Luz 10</Name>
       <SeqControllerIdx>1</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -616,7 +623,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz 16</Name>
+      <Name>Luz 18</Name>
       <SeqControllerIdx>2</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -641,7 +648,7 @@
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz 24</Name>
+      <Name>Luz 26</Name>
       <SeqControllerIdx>3</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -669,7 +676,7 @@
   <Preset>
     <Name>Music Power</Name>
     <AffectedFixture>
-      <Name>Luz 0</Name>
+      <Name>Luz 2</Name>
       <SeqControllerIdx>0</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -690,11 +697,11 @@
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>0</Value>
+        <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz 8</Name>
+      <Name>Luz 10</Name>
       <SeqControllerIdx>1</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -715,11 +722,11 @@
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>0</Value>
+        <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz 16</Name>
+      <Name>Luz 18</Name>
       <SeqControllerIdx>2</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -740,11 +747,11 @@
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>0</Value>
+        <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz 24</Name>
+      <Name>Luz 26</Name>
       <SeqControllerIdx>3</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -765,14 +772,14 @@
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>0</Value>
+        <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
   </Preset>
   <Preset>
     <Name>DMX Party</Name>
     <AffectedFixture>
-      <Name>Luz 0</Name>
+      <Name>Luz 2</Name>
       <SeqControllerIdx>0</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -798,9 +805,9 @@
       <PresetChannel>
         <Type>Intensity</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>100</SoundControllerPercent>
+        <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>68</Value>
+        <Value>255</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>Red</Type>
@@ -819,20 +826,20 @@
       <PresetChannel>
         <Type>Blue</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>100</SoundControllerPercent>
+        <SoundControllerPercent>96</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>71</Value>
+        <Value>8</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>White</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>20</SoundControllerPercent>
+        <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz 8</Name>
+      <Name>Luz 10</Name>
       <SeqControllerIdx>1</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -858,9 +865,9 @@
       <PresetChannel>
         <Type>Intensity</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>100</SoundControllerPercent>
+        <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>68</Value>
+        <Value>255</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>Red</Type>
@@ -879,20 +886,20 @@
       <PresetChannel>
         <Type>Blue</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>100</SoundControllerPercent>
+        <SoundControllerPercent>96</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>71</Value>
+        <Value>8</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>White</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>20</SoundControllerPercent>
+        <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz 16</Name>
+      <Name>Luz 18</Name>
       <SeqControllerIdx>2</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -918,9 +925,9 @@
       <PresetChannel>
         <Type>Intensity</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>100</SoundControllerPercent>
+        <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>68</Value>
+        <Value>255</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>Red</Type>
@@ -939,20 +946,20 @@
       <PresetChannel>
         <Type>Blue</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>100</SoundControllerPercent>
+        <SoundControllerPercent>96</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>71</Value>
+        <Value>8</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>White</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>20</SoundControllerPercent>
+        <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
-      <Name>Luz 24</Name>
+      <Name>Luz 26</Name>
       <SeqControllerIdx>3</SeqControllerIdx>
       <PresetChannel>
         <Type>Mode</Type>
@@ -978,9 +985,9 @@
       <PresetChannel>
         <Type>Intensity</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>100</SoundControllerPercent>
+        <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>68</Value>
+        <Value>255</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>Red</Type>
@@ -999,14 +1006,14 @@
       <PresetChannel>
         <Type>Blue</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>100</SoundControllerPercent>
+        <SoundControllerPercent>96</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>71</Value>
+        <Value>8</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>White</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>20</SoundControllerPercent>
+        <SoundControllerPercent>0</SoundControllerPercent>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>

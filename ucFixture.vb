@@ -92,18 +92,18 @@
             With DirectCast(Me.Controls("tr" & c.ToString), TrackBar)
                 Dim tmpSound As TextBox = DirectCast(Me.Controls("txtSound" & c.ToString), TextBox)
                 Dim tmpSeq As TextBox = DirectCast(Me.Controls("txtSeq" & c.ToString), TextBox)
-                .Visible = tmpPreset0.ChannelShow(c) = ChannelData.Modes.Show
+                .Visible = tmpPreset0.ChannelShow(Fixtures, c) = ChannelData.Modes.Show
                 DirectCast(Me.Controls("lb" & c.ToString), Label).Visible = .Visible
                 tmpSound.Visible = .Visible
                 tmpSeq.Visible = .Visible
-                If tmpPreset0.UserValue(c) >= 0 Then
-                    .Value = tmpPreset0.UserValue(c) ' this fires tr_Scroll, unless StopUpdates = True
-                    tmpSound.Text = tmpPreset0.SoundControllerPercent(c) ' this fires txt_TextChanged, unless StopUpdates = True
-                    tmpSeq.Text = tmpPreset0.SeqControllerPercent(c) ' this fires txt_TextChanged, unless StopUpdates = True
+                If tmpPreset0.UserValue(Fixtures, c) >= 0 Then
+                    .Value = tmpPreset0.UserValue(Fixtures, c) ' this fires tr_Scroll, unless StopUpdates = True
+                    tmpSound.Text = tmpPreset0.SoundControllerPercent(Fixtures, c) ' this fires txt_TextChanged, unless StopUpdates = True
+                    tmpSeq.Text = tmpPreset0.SeqControllerPercent(Fixtures, c) ' this fires txt_TextChanged, unless StopUpdates = True
                     For Each f As FixtureTemplate In Me.Fixtures ' this could be done automaticaly by tr_Scroll but it fails if tmpPreset0.UserValue(c)=0, because TrackBar.Value allready =0 :
-                        _MainForm.Presets(f.ActivePreset).UserValue(c) = tmpPreset0.UserValue(c)
-                        _MainForm.Presets(f.ActivePreset).SoundControllerPercent(c) = tmpPreset0.SoundControllerPercent(c)
-                        _MainForm.Presets(f.ActivePreset).SeqControllerPercent(c) = tmpPreset0.SeqControllerPercent(c)
+                        _MainForm.Presets(f.ActivePreset).UserValue(Fixtures, c) = tmpPreset0.UserValue(Fixtures, c)
+                        _MainForm.Presets(f.ActivePreset).SoundControllerPercent(Fixtures, c) = tmpPreset0.SoundControllerPercent(Fixtures, c)
+                        _MainForm.Presets(f.ActivePreset).SeqControllerPercent(Fixtures, c) = tmpPreset0.SeqControllerPercent(Fixtures, c)
                     Next
                 End If
             End With
@@ -111,15 +111,6 @@
         SuspendInputEvents = False
         _MainForm.Timer1_Tick(Nothing, Nothing)
     End Sub
-
-    'Public Function UpdateFixtures() As String ' isto agora é o         _MainForm.Timer1_Tick(Nothing, Nothing)
-    '    Dim tmpDebug As String = ""
-    '    For Each f As FixtureTemplate In Me.Fixture
-    '        tmpDebug &= f.Update()
-    '    Next
-    '    _MainForm.FixtureUpdated(tmpDebug)
-    '    Return tmpDebug
-    'End Function
 
     Private Sub bt_MouseDown(sender As Object, e As EventArgs)
         DirectCast(sender, Button).BackColor = Color.Red
@@ -148,7 +139,7 @@
             Dim c As ChannelType = DirectCast(.Tag, ChannelType)
             If _MainForm.Debug IsNot Nothing AndAlso _MainForm.Debug.Visible Then _MainForm.Debug.AppendText(Me.Text & " -> Set UserValue «" & c.ToString & "» = " & .Value & vbCrLf)
             For Each f As FixtureTemplate In Me.Fixtures
-                _MainForm.Presets(f.ActivePreset).UserValue(c) = .Value
+                _MainForm.Presets(f.ActivePreset).UserValue(Fixtures, c) = .Value
             Next
             'UpdateFixtures() ' no need, Timer1 is doing this every 100ms
         End With
@@ -169,9 +160,9 @@
             Dim c As ChannelType = DirectCast(.Tag, ChannelType)
             For Each f As FixtureTemplate In Me.Fixtures
                 If .Name.StartsWith("txtSound") Then
-                    _MainForm.Presets(f.ActivePreset).SoundControllerPercent(c) = res
+                    _MainForm.Presets(f.ActivePreset).SoundControllerPercent(Fixtures, c) = res
                 ElseIf .Name.StartsWith("txtSeq") Then
-                    _MainForm.Presets(f.ActivePreset).SeqControllerPercent(c) = res
+                    _MainForm.Presets(f.ActivePreset).SeqControllerPercent(Fixtures, c) = res
                 End If
             Next
             'UpdateFixtures() ' no need, Timer1 is doing this every 100ms
@@ -186,7 +177,7 @@
             If Not TypeOf (c) Is TrackBar Then Continue For
             If Not c.Visible Then Continue For
             Using g As Graphics = c.CreateGraphics
-                Dim l As Integer = tmpPreset0.TotalValue(c.Tag) / 255 * (c.Height - 12 - 12)
+                Dim l As Integer = tmpPreset0.TotalValue(Fixtures, c.Tag) / 255 * (c.Height - 12 - 12)
                 g.DrawLine(Pens.Orange, c.Width - 15, c.Height - 12, c.Width - 15, c.Height - 12 - l)
                 g.DrawLine(Pens.DarkRed, c.Width - 15, c.Height - 12 - l, c.Width - 15, 12)
             End Using
