@@ -199,6 +199,7 @@
             'Dim p As Preset = Presets(f.ActivePreset)
             'For Each c As ChannelData In p.values
             'If c.SoundControllerPercent <> 0 Then c.SoundControllerValue = _frmSound.SoundController
+            'If c.SoundControllerBassPercent <> 0 Then c.SoundControllerBassValue = _frmSound.SoundControllerBass
             'If c.SeqControllerPercent <> 0 Then c.SeqControllerValue = _frmSeq.SeqController(cIdx)
             'Next
             tmpDebug &= f.Update()
@@ -212,6 +213,14 @@
         Timer1.Enabled = False
     End Sub
 
+    ''' <summary>
+    ''' in miliseconds.
+    ''' For example , if set to 33ms, the lights will refresh 30 times per second, 
+    ''' and 30Hz will be the lowest frequency that the sound analyser will correctly understand (lights will quickly blink if sound frequenecy is lower than 30Hz).
+    ''' 
+    ''' For example, a sound of 70Hz, converted to ABS has 140 peaks per second. If RefreshRate=33ms then peaks count per each DataAvailable is 70Hz/1000ms*33ms = 2,31.
+    ''' So, if you want to measure the level of the 70Hz, you have to average the levels of each 33ms
+    ''' </summary>
     Public Property RefreshRate() As Integer
         Get
             Return Timer1.Interval

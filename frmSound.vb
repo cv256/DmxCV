@@ -2,10 +2,11 @@
 
 Public Class frmSound
 
-    Public SoundController As Integer
-    Public maxInput As Byte
+    Public SoundController As Integer, SoundControllerBass As Integer
+    Public maxInput As Byte, maxInputBass As Byte
 
     Private myCapturer 'As Wave.WaveIn
+    Private myLowpass As Dsp.BiQuadFilter
     Private lastMax As New Queue(Of Byte)
 
     Public Sub Init(pDevice As String, pCompressor As Integer, pDelay As Integer, pNoisegate As Integer, pBeat As Integer)
@@ -53,7 +54,7 @@ Public Class frmSound
                     myCapturer = New Wave.WaveIn()
                     myCapturer.DeviceNumber = cmbDevices.SelectedIndex - 1
                     myCapturer.WaveFormat = New Wave.WaveFormat(rate:=8000, bits:=8, channels:=1)
-                    myCapturer.BufferMilliseconds = _MainForm.RefreshRate ' recommended=100ms=10fps   100BPM=600ms=1,7fps   200BPM=300ms=3fps
+                    myCapturer.BufferMilliseconds = _MainForm.RefreshRate
                     AddHandler DirectCast(myCapturer, Wave.WaveIn).DataAvailable, AddressOf waveIn_DataAvailable
                 End If
             End If
@@ -65,6 +66,7 @@ Public Class frmSound
                 chkMonitor.Checked = False
             End Try
         Else
+            myLowpass = Nothing
             If myCapturer IsNot Nothing Then
                 myCapturer.StopRecording()
                 myCapturer.Dispose()
@@ -75,24 +77,39 @@ Public Class frmSound
     End Sub
 
     Private Sub waveIn_DataAvailable(sender As Object, e As Wave.WaveInEventArgs)
-        'Dim maxInput As Byte = 0 ' Max over myCapturer.BufferMilliseconds 0~128
-        For i As Integer = 0 To e.BytesRecorded - 1
-            If Math.Abs(e.Buffer(i) - 128) > maxInput Then maxInput = Math.Abs(e.Buffer(i) - 128)
-        Next
+        DataAvailable(e, sender.WaveFormat.BlockAlign, sender.WaveFormat.SampleRate)
     End Sub
 
-    Private Sub Loopback_DataAvailable(sender As Object, e As Wave.WaveInEventArgs)
+    Private Sub Loopback_DataAvailable(sender As NAudio.Wave.WasapiLoopbackCapture, e As Wave.WaveInEventArgs)
+        DataAvailable(e, sender.WaveFormat.BlockAlign, sender.WaveFormat.SampleRate)
+    End Sub
+
+    Private Sub DataAvailable(e As Wave.WaveInEventArgs, pBlockAlign As Integer, pSampleRate As Integer)
         'Dim maxInput As Byte = 0 ' Max over myCapturer.BufferMilliseconds 0~128
-        For i As Integer = 0 To e.BytesRecorded - 1 Step 8 ' buffered as 4 bytes per channel, 2 channels, I want just the MSB of 1 of the channels
-            Dim v As Byte = Math.Abs(BitConverter.ToSingle(e.Buffer, i)) * 128
-            If v > maxInput Then maxInput = v
+
+        If e.BytesRecorded = 0 Then Return
+
+        If myLowpass Is Nothing Then myLowpass = NAudio.Dsp.BiQuadFilter.LowPassFilter(pSampleRate, 80, 0.7)
+
+        Dim thisSample As Single
+        For i As Integer = 1 To e.BytesRecorded Step pBlockAlign
+            If pBlockAlign = 1 Then
+                thisSample = e.Buffer(i - 1) - 128
+            Else
+                thisSample = BitConverter.ToSingle(e.Buffer, i - 1) * 128
+            End If
+            If Math.Abs(thisSample) > maxInput Then maxInput = Math.Abs(thisSample)
+
+            thisSample = myLowpass.Transform(thisSample)
+            If Math.Abs(thisSample) > maxInputBass Then maxInputBass = Math.Abs(thisSample)
         Next
     End Sub
 
     Public Sub CalculateSoundController()
         lastMax.Enqueue(maxInput)
         ' Compressor:
-        Dim compressionLevel As Decimal = trCompressor.Value, beatPercent As Decimal = 0
+        Dim beatPercent As Decimal = 0
+        Dim CompressionLevel As Decimal = trCompressor.Value
         Dim compressionDelay As Decimal = trDelay.Value ^ 2
         Dim maxOverBPM As Byte = 0, minOverBPM As Byte = 255 ' 0~128
         For Each m As Byte In lastMax
@@ -103,25 +120,29 @@ Public Class frmSound
             lastMax.Dequeue()
         Loop
         Dim amplificationFactor As Decimal = 1
-        If maxInput <= trNoise.Value Then
+        If maxInput < trNoise.Value Then
             amplificationFactor = 0.5
+            lbNoise.ForeColor = Color.Red
         Else
-            If compressionLevel > 0 Then amplificationFactor = (128 + 128 - compressionLevel + 1) / (maxOverBPM + 128 - compressionLevel + 1)
+            If CompressionLevel > 0 Then amplificationFactor = (128 + 128 - CompressionLevel + 1) / (maxOverBPM + 128 - CompressionLevel + 1)
+            lbNoise.ForeColor = Color.White
         End If
+
         Dim tmpMid As Decimal = minOverBPM + (maxInput - minOverBPM) / 2
         If (maxOverBPM - minOverBPM) <> 0 Then beatPercent = Math.Max(((maxInput - tmpMid) / (maxOverBPM - tmpMid)), 0) ' 0 ~ 1
         SoundController = Math.Max(Math.Min(maxInput * amplificationFactor * 2 * ((1 - trBeat.Value / 100) + beatPercent * trBeat.Value / 100), 255), 0) '  0~255
+        SoundControllerBass = Math.Max(Math.Min(maxInputBass * amplificationFactor * 4, 255), 0) ^ 4 / 16581375 '  0~255
 
         ' graphs:
         If Me.Visible Then
-            Label1.Text = "Compressor " & (compressionLevel / 128 * 100).ToString("0.00") & "% :"
+            Label1.Text = "Compressor " & (CompressionLevel / 128 * 100).ToString("0.00") & "% :"
             Label3.Text = "Delay " & compressionDelay.ToString("0") & " ms :" & lastMax.Count
             Label4.Text = "Factor x " & amplificationFactor.ToString("0.00") & " :"
             Label5.Text = "Beat " & trBeat.Value & "% :"
             With Me.CreateGraphics
                 Dim tmpMax As Integer = maxInput / 128 * cmbDevices.Width
-                .FillRectangle(Brushes.Yellow, cmbDevices.Left, chkMonitor.Top + 2, tmpMax, 8)
-                .FillRectangle(Brushes.DimGray, cmbDevices.Left + tmpMax, chkMonitor.Top + 2, cmbDevices.Width - tmpMax, 8)
+                .DrawLine(Pens.Yellow, cmbDevices.Left, cmbDevices.Bottom + 2, cmbDevices.Left + tmpMax, cmbDevices.Bottom + 2)
+                .DrawLine(Pens.DimGray, cmbDevices.Left + tmpMax, cmbDevices.Bottom + 2, cmbDevices.Right, cmbDevices.Bottom + 2)
 
                 tmpMax = Math.Min(amplificationFactor / 30, 1) * trDelay.Width
                 .DrawLine(Pens.Blue, cmbDevices.Left, Label4.Bottom + 2, cmbDevices.Left + tmpMax, Label4.Bottom + 2)
@@ -132,13 +153,17 @@ Public Class frmSound
                 .DrawLine(Pens.DimGray, cmbDevices.Left + tmpMax, Label6.Bottom + 2, cmbDevices.Right, Label6.Bottom + 2)
 
                 tmpMax = SoundController / 255 * cmbDevices.Width
+                .FillRectangle(Brushes.Red, cmbDevices.Left, chkMonitor.Top + 2, tmpMax, 8)
+                .FillRectangle(Brushes.DimGray, cmbDevices.Left + tmpMax, chkMonitor.Top + 2, cmbDevices.Width - tmpMax, 8)
+
+                tmpMax = SoundControllerBass / 255 * cmbDevices.Width
                 .FillRectangle(Brushes.Red, cmbDevices.Left, chkMonitor.Bottom - 10, tmpMax, 8)
                 .FillRectangle(Brushes.DimGray, cmbDevices.Left + tmpMax, chkMonitor.Bottom - 10, cmbDevices.Width - tmpMax, 8)
 
                 .Dispose()
             End With
         End If
-        maxInput = 0
+        maxInput = 0 : maxInputBass = 0
     End Sub
 
     Friend Function Serialize() As XElement

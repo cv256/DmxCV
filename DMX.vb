@@ -46,7 +46,7 @@ Public Class clDMX
             End If
 
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            If MsgBox(ex.Message, MsgBoxStyle.Critical Or MsgBoxStyle.OkCancel) = MsgBoxResult.Cancel Then End
             Return ex.Message
         End Try
 
@@ -58,11 +58,11 @@ Public Class clDMX
         While SerialPort1.BytesToRead > 0
             res &= SerialPort1.ReadExisting()
         End While
-        MsgBox(res, MsgBoxStyle.Critical)
+        If MsgBox(res, MsgBoxStyle.Critical Or MsgBoxStyle.OkCancel) = MsgBoxResult.Cancel Then End
     End Sub
 
     Private Sub SerialPort1_ErrorReceived(sender As SerialPort, e As SerialErrorReceivedEventArgs) Handles SerialPort1.ErrorReceived
-        MsgBox("SerialPort1.ErrorReceived", MsgBoxStyle.Critical)
+        If MsgBox("SerialPort1.ErrorReceived", MsgBoxStyle.Critical Or MsgBoxStyle.OkCancel) = MsgBoxResult.Cancel Then End
     End Sub
 
 End Class

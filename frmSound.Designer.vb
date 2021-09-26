@@ -33,7 +33,7 @@ Partial Class frmSound
         Me.Label5 = New System.Windows.Forms.Label()
         Me.trBeat = New System.Windows.Forms.TrackBar()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.lbNoise = New System.Windows.Forms.Label()
         Me.trNoise = New System.Windows.Forms.TrackBar()
         CType(Me.trCompressor, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.trDelay, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -152,14 +152,14 @@ Partial Class frmSound
         Me.Label6.TabIndex = 13
         Me.Label6.Text = "Factor:"
         '
-        'Label7
+        'lbNoise
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(7, 116)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(61, 13)
-        Me.Label7.TabIndex = 15
-        Me.Label7.Text = "Noise gate:"
+        Me.lbNoise.AutoSize = True
+        Me.lbNoise.Location = New System.Drawing.Point(7, 116)
+        Me.lbNoise.Name = "lbNoise"
+        Me.lbNoise.Size = New System.Drawing.Size(61, 13)
+        Me.lbNoise.TabIndex = 15
+        Me.lbNoise.Text = "Noise gate:"
         '
         'trNoise
         '
@@ -179,7 +179,7 @@ Partial Class frmSound
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(440, 294)
-        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.lbNoise)
         Me.Controls.Add(Me.trNoise)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
@@ -217,7 +217,7 @@ Partial Class frmSound
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents trBeat As System.Windows.Forms.TrackBar
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents lbNoise As System.Windows.Forms.Label
     Friend WithEvents trNoise As System.Windows.Forms.TrackBar
 
 End Class

@@ -160,7 +160,7 @@
                     res = CInt(.Text)
                 Catch ex As Exception
                 End Try
-                If res > 100 OrElse res < -100 Then
+                If res > 400 OrElse res < -400 Then
                     res = 0
                     .Text = ""
                 End If

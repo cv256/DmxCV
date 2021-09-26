@@ -61,6 +61,23 @@ Public Class Preset
             Next
         End Set
     End Property
+    Public Property SoundControllerBassPercent(pFixtures As List(Of FixtureTemplate), pChannelType As ChannelType) As Integer
+        Get
+            Dim res As Integer = Channel.ValueUnkown
+            For Each f As FixtureTemplate In Me.AffectedFixtures.Keys
+                If Not pFixtures.Contains(f) Then Continue For
+                If Not f.Channels.ContainsKey(pChannelType) Then Continue For
+                Return Me.AffectedFixtures(f).SoundControllerBassPercent(pChannelType)
+            Next
+            Return res
+        End Get
+        Set(value As Integer)
+            For Each f As KeyValuePair(Of FixtureTemplate, FixtureValues) In Me.AffectedFixtures
+                If Not pFixtures.Contains(f.Key) Then Continue For
+                f.Value.SoundControllerBassPercent(pChannelType) = value
+            Next
+        End Set
+    End Property
     Public Property SeqControllerPercent(pFixtures As List(Of FixtureTemplate), pChannelType As ChannelType) As Integer
         Get
             Dim res As Integer = Channel.ValueUnkown
@@ -104,6 +121,7 @@ Public Class Preset
                     New XElement("Type", p.ChannelType.Type),
                     New XElement("Mode", p.Mode.ToString),
                     New XElement("SoundControllerPercent", p.SoundControllerPercent),
+                    New XElement("SoundControllerPercentBass", p.SoundControllerBassPercent),
                     New XElement("SeqControllerPercent", p.SeqControllerPercent),
                     New XElement("Value", p.UserValue)
                 )
@@ -133,6 +151,7 @@ Public Class FixtureValues
                 EnumByString(xPc.<Mode>.Value, GetType(ChannelData.Modes)),
                 CInt(xPc.<Value>.Value),
                 CInt(xPc.<SoundControllerPercent>.Value),
+                CInt(xPc.<SoundControllerPercentBass>.Value),
                 CInt(xPc.<SeqControllerPercent>.Value)))
         Next
     End Sub
@@ -165,6 +184,16 @@ Public Class FixtureValues
             Channels(pChannelType).SoundControllerPercent = value
         End Set
     End Property
+    Public Property SoundControllerBassPercent(pChannelType As ChannelType) As Integer
+        Get
+            If Not Channels.ContainsKey(pChannelType) Then Return 0
+            Return Channels(pChannelType).SoundControllerBassPercent
+        End Get
+        Set(value As Integer)
+            If Not Channels.ContainsKey(pChannelType) Then Return
+            Channels(pChannelType).SoundControllerBassPercent = value
+        End Set
+    End Property
 
     Public Property SeqControllerPercent(pChannelType As ChannelType) As Integer
         Get
@@ -180,7 +209,11 @@ Public Class FixtureValues
     Public Function TotalValue(pChannelType As ChannelType) As Integer
         If Not Channels.ContainsKey(pChannelType) Then Return 0
         With Channels(pChannelType)
-            Return Math.Max(Math.Min(.UserValue + _MainForm._frmSound.SoundController / 100 * .SoundControllerPercent + _MainForm._frmSeq.SeqController(SeqControllerIdx) / 100 * .SeqControllerPercent, 255), 0)
+            Return Math.Max(Math.Min(.UserValue _
+                                     + _MainForm._frmSound.SoundController / 100 * .SoundControllerPercent _
+                                     + _MainForm._frmSound.SoundControllerBass / 100 * .SoundControllerBassPercent _
+                                     + _MainForm._frmSeq.SeqController(SeqControllerIdx) / 100 * .SeqControllerPercent _
+                                     , 255), 0)
         End With
     End Function
 
@@ -234,14 +267,16 @@ Public Class ChannelData
     Public UserValue As Integer
     'Public SoundControllerValue As Integer
     Public SoundControllerPercent As Integer
+    Public SoundControllerBassPercent As Integer
     'Public SeqControllerValue As Integer
     Public SeqControllerPercent As Integer
 
-    Public Sub New(pChannelType As ChannelType, pMode As Modes, pUserValue As Integer, pSoundControllerPercent As Integer, pSeqControllerPercent As Integer)
+    Public Sub New(pChannelType As ChannelType, pMode As Modes, pUserValue As Integer, pSoundControllerPercent As Integer, pSoundControllerBassPercent As Integer, pSeqControllerPercent As Integer)
         ChannelType = pChannelType
         Mode = pMode
         UserValue = pUserValue
         SoundControllerPercent = pSoundControllerPercent
+        SoundControllerBassPercent = pSoundControllerBassPercent
         SeqControllerPercent = pSeqControllerPercent
     End Sub
 

@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <DMXCV Version="1.1.16.0">
-  <SaveDate>2020-10-24T19:34:20.4415943+01:00</SaveDate>
-  <RefreshRate>50</RefreshRate>
+  <SaveDate>2021-09-26T15:46:48.0890798+01:00</SaveDate>
+  <RefreshRate>30</RefreshRate>
   <Offline>false</Offline>
   <Debug>false</Debug>
   <Preview>true</Preview>
   <Port>0</Port>
   <Sound>
-    <Device>Microphone do Portatil (High De</Device>
-    <Compressor>66</Compressor>
-    <Delay>50</Delay>
+    <Device>Loopback</Device>
+    <Compressor>128</Compressor>
+    <Delay>39</Delay>
     <Noisegate>0</Noisegate>
-    <Beat>95</Beat>
+    <Beat>0</Beat>
   </Sound>
   <Sequencer>
     <ActiveSequence>Rainbow</ActiveSequence>
@@ -64,6 +64,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>227</Value>
       </PresetChannel>
@@ -71,6 +72,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -78,6 +80,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -89,6 +92,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>227</Value>
       </PresetChannel>
@@ -96,6 +100,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -103,6 +108,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -114,6 +120,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>227</Value>
       </PresetChannel>
@@ -121,6 +128,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -128,6 +136,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -139,6 +148,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>227</Value>
       </PresetChannel>
@@ -146,6 +156,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -153,6 +164,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -167,6 +179,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>227</Value>
       </PresetChannel>
@@ -174,6 +187,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -181,6 +195,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -192,6 +207,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>227</Value>
       </PresetChannel>
@@ -199,6 +215,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -206,6 +223,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -217,6 +235,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>227</Value>
       </PresetChannel>
@@ -224,6 +243,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -231,6 +251,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -242,6 +263,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>227</Value>
       </PresetChannel>
@@ -249,6 +271,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -256,6 +279,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -270,6 +294,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -277,6 +302,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -284,6 +310,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>7</Value>
       </PresetChannel>
@@ -295,6 +322,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -302,6 +330,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -309,6 +338,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>7</Value>
       </PresetChannel>
@@ -320,6 +350,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -327,6 +358,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -334,6 +366,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>7</Value>
       </PresetChannel>
@@ -345,6 +378,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -352,6 +386,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -359,6 +394,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>7</Value>
       </PresetChannel>
@@ -373,6 +409,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>124</Value>
       </PresetChannel>
@@ -380,6 +417,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>129</Value>
       </PresetChannel>
@@ -387,6 +425,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -398,6 +437,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>124</Value>
       </PresetChannel>
@@ -405,6 +445,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>129</Value>
       </PresetChannel>
@@ -412,6 +453,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -423,6 +465,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>124</Value>
       </PresetChannel>
@@ -430,6 +473,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>129</Value>
       </PresetChannel>
@@ -437,6 +481,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -448,6 +493,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>124</Value>
       </PresetChannel>
@@ -455,6 +501,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>129</Value>
       </PresetChannel>
@@ -462,6 +509,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -476,6 +524,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>125</Value>
       </PresetChannel>
@@ -483,6 +532,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -490,6 +540,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -501,6 +552,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>125</Value>
       </PresetChannel>
@@ -508,6 +560,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -515,6 +568,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -526,6 +580,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>125</Value>
       </PresetChannel>
@@ -533,6 +588,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -540,6 +596,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -551,6 +608,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>125</Value>
       </PresetChannel>
@@ -558,6 +616,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -565,6 +624,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -579,6 +639,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>176</Value>
       </PresetChannel>
@@ -586,6 +647,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -593,6 +655,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -604,6 +667,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>176</Value>
       </PresetChannel>
@@ -611,6 +675,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -618,6 +683,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -629,6 +695,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>176</Value>
       </PresetChannel>
@@ -636,6 +703,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -643,6 +711,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -654,6 +723,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>176</Value>
       </PresetChannel>
@@ -661,6 +731,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -668,6 +739,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -682,6 +754,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>176</Value>
       </PresetChannel>
@@ -689,6 +762,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -696,6 +770,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -707,6 +782,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>176</Value>
       </PresetChannel>
@@ -714,6 +790,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -721,6 +798,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -732,6 +810,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>176</Value>
       </PresetChannel>
@@ -739,6 +818,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -746,6 +826,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -757,6 +838,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>176</Value>
       </PresetChannel>
@@ -764,6 +846,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -771,6 +854,7 @@
         <Type>Speed</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -785,6 +869,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -792,6 +877,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -799,6 +885,7 @@
         <Type>Speed</Type>
         <Mode>Ignore</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>146</Value>
       </PresetChannel>
@@ -806,6 +893,7 @@
         <Type>Intensity</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -813,6 +901,7 @@
         <Type>Red</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>100</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -820,20 +909,23 @@
         <Type>Green</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>Blue</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>96</SoundControllerPercent>
+        <SoundControllerPercent>100</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>8</Value>
+        <Value>35</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>White</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>400</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -845,6 +937,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -852,6 +945,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -859,6 +953,7 @@
         <Type>Speed</Type>
         <Mode>Ignore</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>146</Value>
       </PresetChannel>
@@ -866,6 +961,7 @@
         <Type>Intensity</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -873,6 +969,7 @@
         <Type>Red</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>100</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -880,20 +977,23 @@
         <Type>Green</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>Blue</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>96</SoundControllerPercent>
+        <SoundControllerPercent>100</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>8</Value>
+        <Value>35</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>White</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>400</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -905,6 +1005,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -912,6 +1013,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -919,6 +1021,7 @@
         <Type>Speed</Type>
         <Mode>Ignore</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>146</Value>
       </PresetChannel>
@@ -926,6 +1029,7 @@
         <Type>Intensity</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -933,6 +1037,7 @@
         <Type>Red</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>100</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -940,20 +1045,23 @@
         <Type>Green</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>Blue</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>96</SoundControllerPercent>
+        <SoundControllerPercent>100</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>8</Value>
+        <Value>35</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>White</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>400</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -965,6 +1073,7 @@
         <Type>Mode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -972,6 +1081,7 @@
         <Type>SubMode</Type>
         <Mode>Hide</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -979,6 +1089,7 @@
         <Type>Speed</Type>
         <Mode>Ignore</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>146</Value>
       </PresetChannel>
@@ -986,6 +1097,7 @@
         <Type>Intensity</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
@@ -993,6 +1105,7 @@
         <Type>Red</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>100</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
@@ -1000,20 +1113,23 @@
         <Type>Green</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>255</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>Blue</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>96</SoundControllerPercent>
+        <SoundControllerPercent>100</SoundControllerPercent>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>8</Value>
+        <Value>35</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>White</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
+        <SoundControllerPercentBass>400</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
         <Value>0</Value>
       </PresetChannel>
