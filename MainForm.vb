@@ -390,4 +390,12 @@
         End
     End Sub
 
+    Public Sub DebugWriteError(msg As String)
+        If Debug Is Nothing Then
+            Debug = New frmDebug
+        End If
+        Debug.AppendText(vbCrLf & msg & vbCrLf)
+        ckDebug.Checked = True
+    End Sub
+
 End Class
