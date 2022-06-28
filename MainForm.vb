@@ -3,6 +3,7 @@
     Public Presets As New Dictionary(Of String, Preset)
     Public ReadOnly _frmSound As New frmSound
     Public ReadOnly _frmSeq As New frmSeq
+    Public ReadOnly _frmSeqMult As New frmSeq
     Public Debug As frmDebug
     Public frmFixture As ucFixture
     Private _BackgroundImage As Image
@@ -194,6 +195,7 @@
         Timer1.Enabled = False
         _frmSound.CalculateSoundController()
         _frmSeq.Advance()
+        _frmSeqMult.Advance()
         Dim tmpDebug As String = "" ', cIdx As Integer = 0
         For Each f As FixtureTemplate In Fixtures
             'Dim p As Preset = Presets(f.ActivePreset)
@@ -273,8 +275,10 @@
 
             root.Add(New XAttribute("Version", My.Application.Info.Version.ToString))
 
-            root.Add(_frmSound.Serialize())
-            root.Add(_frmSeq.Serialize())
+            Dim sound As New XElement("Sound",
+                New XElement("Device", _frmSound.cmbDevices.SelectedItem)
+            )
+            root.Add(sound)
 
             For Each f As FixtureTemplate In Me.Fixtures
                 root.Add(f.Serialize)
@@ -340,8 +344,7 @@
                     End If
                 Next
 
-                _frmSeq.Init(.<Sequencer>.<ActiveSequence>.Value, .<Sequencer>.<BaseSpeed>.Value, .<Sequencer>.<SoundSpeed>.Value, .<Sequencer>.<Mode>.Value)
-                _frmSound.Init(.<Sound>.<Device>.Value, .<Sound>.<Compressor>.Value, .<Sound>.<Delay>.Value, .<Sound>.<Noisegate>.Value, .<Sound>.<Beat>.Value)
+                _frmSound.SetDevice(.<Sound>.<Device>.Value)
 
             End With
 
@@ -385,6 +388,7 @@
         Timer1 = Nothing
         If _frmSound IsNot Nothing Then _frmSound.Close()
         If _frmSeq IsNot Nothing Then _frmSeq.Close()
+        If _frmSeqMult IsNot Nothing Then _frmSeqMult.Close()
         If Debug IsNot Nothing Then Debug.Close()
         dmx = Nothing
         End

@@ -32,7 +32,7 @@
         Next
         If tmpBt IsNot Nothing Then biggestRight = tmpBt.Right
 
-        Dim tmplabel As Label, tmpTxtSound As TextBox, tmpTxtSoundBass As TextBox, tmpTxtSeq As TextBox
+        Dim tmplabel As Label, tmpTxtSound As TextBox, tmpTxtSoundBass As TextBox, tmpTxtSeq As TextBox, tmpTxtSeqMult As TextBox
         For Each c As ChannelType In ChannelTypes.Enum
             If ChannelShow(c) = ChannelData.Modes.Hide Then Continue For
             tmplabel = New Label With {.Name = "lb" & c.Type, .Text = c.Description, .Top = 0, .Left = biggestRight, .AutoSize = True, .ForeColor = Color.LightBlue, .Tag = c}
@@ -46,9 +46,11 @@
             Me.Controls.Add(tmpTxtSoundBass)
             tmpTxtSeq = _MainForm.NewPercent("txtSeq" & c.Type, pTop:=tmpTxtSoundBass.Bottom + 2, pLeft:=tmplabel.Left + 3, pTag:=c, pTextChanged:=AddressOf txt_TextChanged)
             Me.Controls.Add(tmpTxtSeq)
+            tmpTxtSeqMult = _MainForm.NewPercent("txtSeqMult" & c.Type, pTop:=tmpTxtSeq.Bottom + 2, pLeft:=tmplabel.Left + 3, pTag:=c, pTextChanged:=AddressOf txt_TextChanged)
+            Me.Controls.Add(tmpTxtSeqMult)
             If tmpTr.Right > biggestRight Then biggestRight = tmpTr.Right
         Next
-        biggestBottom = tmpTxtSeq.Bottom
+        biggestBottom = tmpTxtSeqMult.Bottom
 
         tmplabel = New LinkLabel With {.Name = "lbSound", .Text = "Sound Controller", .Top = tmpTxtSound.Top, .Left = 0, .AutoSize = False, .Width = tmpBt.Right, .Height = tmpTxtSound.Height, .ForeColor = Color.LightBlue, .Cursor = Cursors.Hand}
         Me.Controls.Add(tmplabel)
@@ -56,9 +58,12 @@
         tmplabel = New LinkLabel With {.Name = "lbSoundBass", .Text = "Bass", .Top = tmpTxtSoundBass.Top, .Left = 0, .AutoSize = False, .Width = tmpBt.Right, .Height = tmpTxtSoundBass.Height, .ForeColor = Color.LightBlue, .Cursor = Cursors.Hand}
         Me.Controls.Add(tmplabel)
         AddHandler tmplabel.Click, AddressOf lbSound_Click
-        tmplabel = New LinkLabel With {.Name = "lbSeq", .Text = "Sequencer", .Top = tmpTxtSeq.Top, .Left = 0, .AutoSize = False, .Width = tmpBt.Right, .Height = tmpTxtSeq.Height, .ForeColor = Color.LightBlue, .Cursor = Cursors.Hand}
+        tmplabel = New LinkLabel With {.Name = "lbSeq", .Text = "Sequencer Add", .Top = tmpTxtSeq.Top, .Left = 0, .AutoSize = False, .Width = tmpBt.Right, .Height = tmpTxtSeq.Height, .ForeColor = Color.LightBlue, .Cursor = Cursors.Hand}
         Me.Controls.Add(tmplabel)
         AddHandler tmplabel.Click, AddressOf lbSeq_Click
+        tmplabel = New LinkLabel With {.Name = "lbSeqMult", .Text = "Sequencer Multiply", .Top = tmpTxtSeqMult.Top, .Left = 0, .AutoSize = False, .Width = tmpBt.Right, .Height = tmpTxtSeqMult.Height, .ForeColor = Color.LightBlue, .Cursor = Cursors.Hand}
+        Me.Controls.Add(tmplabel)
+        AddHandler tmplabel.Click, AddressOf lbSeqMult_Click
 
         Me.Size = New Size(biggestRight, biggestBottom)
 
@@ -92,27 +97,34 @@
         ' enable/disable de controlos e setvalues:
         _MainForm.RefreshSuspended() : SuspendInputEvents = True
         Dim tmpPreset0 As Preset = _MainForm.Presets(p)
+        _MainForm._frmSeq.Init(tmpPreset0.Seq)
+        _MainForm._frmSeqMult.Init(tmpPreset0.SeqMult)
+        _MainForm._frmSound.Init(tmpPreset0.Sound)
         For Each c As ChannelType In ChannelTypes.Enum
             If Not Me.Controls.ContainsKey("tr" & c.ToString) Then Continue For
             With DirectCast(Me.Controls("tr" & c.ToString), TrackBar)
                 Dim tmpSound As TextBox = DirectCast(Me.Controls("txtSound" & c.ToString), TextBox)
                 Dim tmpSoundBass As TextBox = DirectCast(Me.Controls("txtSoundBass" & c.ToString), TextBox)
                 Dim tmpSeq As TextBox = DirectCast(Me.Controls("txtSeq" & c.ToString), TextBox)
+                Dim tmpSeqMult As TextBox = DirectCast(Me.Controls("txtSeqMult" & c.ToString), TextBox)
                 .Visible = tmpPreset0.ChannelShow(Fixtures, c) = ChannelData.Modes.Show
                 DirectCast(Me.Controls("lb" & c.ToString), Label).Visible = .Visible
                 tmpSound.Visible = .Visible
                 tmpSoundBass.Visible = .Visible
                 tmpSeq.Visible = .Visible
+                tmpSeqMult.Visible = .Visible
                 If tmpPreset0.UserValue(Fixtures, c) >= 0 Then
                     .Value = tmpPreset0.UserValue(Fixtures, c) ' this fires tr_Scroll, unless StopUpdates = True
                     tmpSound.Text = tmpPreset0.SoundControllerPercent(Fixtures, c) ' this fires txt_TextChanged, unless StopUpdates = True
                     tmpSoundBass.Text = tmpPreset0.SoundControllerBassPercent(Fixtures, c) ' this fires txt_TextChanged, unless StopUpdates = True
                     tmpSeq.Text = tmpPreset0.SeqControllerPercent(Fixtures, c) ' this fires txt_TextChanged, unless StopUpdates = True
+                    tmpSeqMult.Text = tmpPreset0.SeqControllerPercentMult(Fixtures, c) ' this fires txt_TextChanged, unless StopUpdates = True
                     For Each f As FixtureTemplate In Me.Fixtures ' this could be done automaticaly by tr_Scroll but it fails if tmpPreset0.UserValue(c)=0, because TrackBar.Value allready =0 :
                         _MainForm.Presets(f.ActivePreset).UserValue(Fixtures, c) = tmpPreset0.UserValue(Fixtures, c)
                         _MainForm.Presets(f.ActivePreset).SoundControllerPercent(Fixtures, c) = tmpPreset0.SoundControllerPercent(Fixtures, c)
                         _MainForm.Presets(f.ActivePreset).SoundControllerBassPercent(Fixtures, c) = tmpPreset0.SoundControllerBassPercent(Fixtures, c)
                         _MainForm.Presets(f.ActivePreset).SeqControllerPercent(Fixtures, c) = tmpPreset0.SeqControllerPercent(Fixtures, c)
+                        _MainForm.Presets(f.ActivePreset).SeqControllerPercentMult(Fixtures, c) = tmpPreset0.SeqControllerPercentMult(Fixtures, c)
                     Next
                 End If
             End With
@@ -161,6 +173,10 @@
     Private Sub lbSeq_Click(sender As Object, e As EventArgs)
         _MainForm._frmSeq.Visible = True
     End Sub
+    Private Sub lbSeqMult_Click(sender As Object, e As EventArgs)
+        _MainForm._frmSeqMult.Visible = True
+    End Sub
+
 
     Private Sub txt_TextChanged(sender As Object, e As EventArgs)
         If SuspendInputEvents Then Return
@@ -172,6 +188,8 @@
                     _MainForm.Presets(f.ActivePreset).SoundControllerBassPercent(Fixtures, c) = res
                 ElseIf .Name.StartsWith("txtSound") Then
                     _MainForm.Presets(f.ActivePreset).SoundControllerPercent(Fixtures, c) = res
+                ElseIf .Name.StartsWith("txtSeqMult") Then
+                    _MainForm.Presets(f.ActivePreset).SeqControllerPercentMult(Fixtures, c) = res
                 ElseIf .Name.StartsWith("txtSeq") Then
                     _MainForm.Presets(f.ActivePreset).SeqControllerPercent(Fixtures, c) = res
                 End If
@@ -179,7 +197,6 @@
             'UpdateFixtures() ' no need, Timer1 is doing this every 100ms
         End With
     End Sub
-
 
     Public Sub PaintVUs()
         If Not Me.Visible Then Return

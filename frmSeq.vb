@@ -4,14 +4,19 @@ Public Class frmSeq
     Private ReadOnly Sequences As New List(Of Sequence)
     Private ActiveSequence As Sequence, SequencePosition As Decimal
     Private ReadOnly SeqControllers As New List(Of Integer)
+    Private PresetSeq As PresetSeq
 
+    ''' <summary>
+    ''' 0~255
+    ''' </summary>
     Public ReadOnly Property SeqController(cIdx As Integer) As Integer
         Get
             Return SeqControllers(IIf(rdFlood.Checked, 0, cIdx))
         End Get
     End Property
 
-    Public Sub Init(pSequenceName As String, pBaseSpeed As Integer, pSoundSpeed As Integer, pMode As String)
+    Public Sub Init(pPresetSeq As PresetSeq)
+        PresetSeq = pPresetSeq
         If SeqControllers.Count = 0 Then
             ' Inits 4 controller channels:
             For cIdx As Integer = 0 To 3 : SeqControllers.Add(0) : Next
@@ -37,40 +42,28 @@ Public Class frmSeq
 
             ' Init the Form:
             lstSeq.Items.AddRange(Sequences.ToArray)
-            If lstSeq.Items.Count > 0 Then lstSeq.SelectedIndex = 0
+            'If lstSeq.Items.Count > 0 Then lstSeq.SelectedIndex = 0
             Me.TopMost = True
         End If
 
         ' LoadConfiguration:
         For Each s In lstSeq.Items
-            If DirectCast(s, Sequence).Name = pSequenceName Then
+            If DirectCast(s, Sequence).Name = pPresetSeq.SequenceName Then
                 lstSeq.SelectedItem = s
                 Exit For
             End If
         Next
-        trSpeed.Value = pBaseSpeed
-        txtSound.Text = pSoundSpeed
-        If Not String.IsNullOrEmpty(pMode) Then
-            If pMode.ToUpper = "FLOOD" Then rdFlood.Checked = True
-            If pMode.ToUpper = "CHASE" Then rdChase.Checked = True
+        trSpeed.Value = pPresetSeq.BaseSpeed
+        txtSound.Text = pPresetSeq.SoundSpeed
+        If Not String.IsNullOrEmpty(pPresetSeq.Mode) Then
+            If pPresetSeq.Mode.ToUpper = "FLOOD" Then rdFlood.Checked = True
+            If pPresetSeq.Mode.ToUpper = "CHASE" Then rdChase.Checked = True
         End If
     End Sub
 
-
-    Friend Function Serialize() As XElement
-        Dim res As New XElement("Sequencer",
-            New XElement("ActiveSequence", ActiveSequence.Name),
-            New XElement("BaseSpeed", trSpeed.Value),
-            New XElement("SoundSpeed", TextBoxValue(txtSound)),
-            New XElement("Mode", IIf(rdFlood.Checked, "Flood", "Chase"))
-        )
-        Return res
-    End Function
-
-
     Public Sub Advance()
         If ActiveSequence Is Nothing Then Return
-        Dim tmpSpeed As Integer = Math.Min(450, trSpeed.Value + TextBoxValue(txtSound) / 60 * _MainForm._frmSound.SoundController)
+        Dim tmpSpeed As Integer = Math.Min(450, PresetSeq.BaseSpeed + PresetSeq.SoundSpeed / 60 * _MainForm._frmSound.SoundController)
         Using g As Graphics = trSpeed.CreateGraphics
             Dim l As Integer = Math.Min(255, tmpSpeed) / 255 * (trSpeed.Height - 12 - 12)
             g.DrawLine(Pens.Orange, trSpeed.Width - 15, trSpeed.Height - 12, trSpeed.Width - 15, trSpeed.Height - 12 - l)
@@ -138,13 +131,29 @@ Public Class frmSeq
         If s Is Nothing Then Return
         SequencePosition = 0
         ActiveSequence = s
+        PresetSeq.SequenceName = DirectCast(s, Sequence).Name
         Me.Refresh()
     End Sub
 
+    Private Sub trSpeed_Scroll(sender As Object, e As EventArgs) Handles trSpeed.Scroll
+        If PresetSeq IsNot Nothing Then PresetSeq.BaseSpeed = trSpeed.Value
+    End Sub
+
+    Private Sub txtSound_TextChanged(sender As Object, e As EventArgs) Handles txtSound.TextChanged
+        If PresetSeq IsNot Nothing Then PresetSeq.SoundSpeed = TextBoxValue(txtSound)
+    End Sub
+
+    Private Sub rdChase_CheckedChanged(sender As Object, e As EventArgs) Handles rdChase.CheckedChanged
+        If PresetSeq IsNot Nothing Then PresetSeq.Mode = "CHASE"
+    End Sub
+
+    Private Sub rdFlood_CheckedChanged(sender As Object, e As EventArgs) Handles rdFlood.CheckedChanged
+        If PresetSeq IsNot Nothing Then PresetSeq.Mode = "FLOOD"
+    End Sub
 
     Private Class Sequence
         Public Name As String
-        Public ReadOnly Values As New List(Of Integer)
+        Public ReadOnly Values As New List(Of Integer) ' 0~255
         Public Distance As Integer
         Public SpeedFactor As Decimal
         Public PreviewMode As PreviewModes

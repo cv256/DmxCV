@@ -1,10 +1,56 @@
-﻿
+﻿Public Class PresetSeq
+    Public SequenceName As String, BaseSpeed As Integer, SoundSpeed As Integer, Mode As String
+    Public Function Serialize(pMult As Boolean) As XElement
+        Dim res As New XElement("Sequencer" + If(pMult, "Mult", ""),
+            New XElement("ActiveSequence", SequenceName),
+            New XElement("BaseSpeed", BaseSpeed),
+            New XElement("SoundSpeed", SoundSpeed),
+            New XElement("Mode", Mode)
+        )
+        Return res
+    End Function
+    Public Sub fromXML(xml As XElement, pMult As Boolean)
+        Dim x = If(pMult, xml.<SequencerMult>, xml.<Sequencer>)
+        SequenceName = x.<ActiveSequence>.Value
+        BaseSpeed = x.<BaseSpeed>.Value
+        SoundSpeed = x.<SoundSpeed>.Value
+        Mode = x.<Mode>.Value
+    End Sub
+End Class
+
+Public Class PresetSound
+    Public Compressor As Integer, Delay As Integer, Noisegate As Integer, Beat As Integer
+    Public Function Serialize() As XElement
+        Dim res As New XElement("Sound",
+            New XElement("Compressor", Compressor),
+            New XElement("Delay", Delay),
+            New XElement("Noisegate", Noisegate),
+            New XElement("Beat", Beat)
+        )
+        Return res
+    End Function
+    Public Sub fromXML(xml As XElement)
+        With xml
+            Compressor = .<Sound>.<Compressor>.Value
+            Delay = .<Sound>.<Delay>.Value
+            Noisegate = .<Sound>.<Noisegate>.Value
+            Beat = .<Sound>.<Beat>.Value
+        End With
+    End Sub
+End Class
+
 Public Class Preset
     Public Name As String
     Public AffectedFixtures As New Dictionary(Of FixtureTemplate, FixtureValues)
+    Public Seq As New PresetSeq
+    Public SeqMult As New PresetSeq
+    Public Sound As New PresetSound
 
     Public Sub New(xPreset As XElement)
         Name = xPreset.<Name>.Value
+        Seq.fromXML(xPreset, False)
+        SeqMult.fromXML(xPreset, True)
+        Sound.fromXML(xPreset)
         For Each xFixt As XElement In xPreset.<AffectedFixture>
             Dim fixtureName As String = xFixt.<Name>.Value
             Dim fix As FixtureTemplate = _MainForm.Fixtures.First(Function(fff) fff.Name.ToUpper = fixtureName.ToUpper)
@@ -95,6 +141,23 @@ Public Class Preset
             Next
         End Set
     End Property
+    Public Property SeqControllerPercentMult(pFixtures As List(Of FixtureTemplate), pChannelType As ChannelType) As Integer
+        Get
+            Dim res As Integer = Channel.ValueUnkown
+            For Each f As FixtureTemplate In Me.AffectedFixtures.Keys
+                If Not pFixtures.Contains(f) Then Continue For
+                If Not f.Channels.ContainsKey(pChannelType) Then Continue For
+                Return Me.AffectedFixtures(f).SeqControllerPercentMult(pChannelType)
+            Next
+            Return res
+        End Get
+        Set(value As Integer)
+            For Each f As KeyValuePair(Of FixtureTemplate, FixtureValues) In Me.AffectedFixtures
+                If Not pFixtures.Contains(f.Key) Then Continue For
+                f.Value.SeqControllerPercentMult(pChannelType) = value
+            Next
+        End Set
+    End Property
     Public ReadOnly Property TotalValue(pFixtures As List(Of FixtureTemplate), pChannelType As ChannelType) As Integer
         Get
             Dim res As Integer = 0
@@ -111,6 +174,11 @@ Public Class Preset
         Dim res As New XElement("Preset",
             New XElement("Name", Name)
         )
+
+        res.Add(Seq.Serialize(False))
+        res.Add(SeqMult.Serialize(True))
+        res.Add(Sound.Serialize())
+
         For Each f As KeyValuePair(Of FixtureTemplate, FixtureValues) In Me.AffectedFixtures
             Dim resf As New XElement("AffectedFixture",
                 New XElement("Name", f.Key.Name),
@@ -123,6 +191,7 @@ Public Class Preset
                     New XElement("SoundControllerPercent", p.SoundControllerPercent),
                     New XElement("SoundControllerPercentBass", p.SoundControllerBassPercent),
                     New XElement("SeqControllerPercent", p.SeqControllerPercent),
+                    New XElement("SeqControllerPercentMult", p.SeqControllerPercentMult),
                     New XElement("Value", p.UserValue)
                 )
                 resf.Add(resp)
@@ -131,7 +200,6 @@ Public Class Preset
         Next f
         Return res
     End Function
-
 End Class
 
 
@@ -146,13 +214,17 @@ Public Class FixtureValues
     Friend Sub New(ByVal fld As XElement)
         SeqControllerIdx = fld.<SeqControllerIdx>.Value
         For Each xPc As XElement In fld.<PresetChannel>
-            Channels.Add(ChannelTypes.ByName(xPc.<Type>.Value), New ChannelData(
-                ChannelTypes.ByName(xPc.<Type>.Value),
-                EnumByString(xPc.<Mode>.Value, GetType(ChannelData.Modes)),
-                CInt(xPc.<Value>.Value),
-                CInt(xPc.<SoundControllerPercent>.Value),
-                CInt(xPc.<SoundControllerPercentBass>.Value),
-                CInt(xPc.<SeqControllerPercent>.Value)))
+            Channels.Add(ChannelTypes.ByName(xPc.<Type>.Value),
+                         New ChannelData(
+                            ChannelTypes.ByName(xPc.<Type>.Value),
+                            EnumByString(xPc.<Mode>.Value, GetType(ChannelData.Modes)),
+                            CInt(xPc.<Value>.Value),
+                            CInt(xPc.<SoundControllerPercent>.Value),
+                            CInt(xPc.<SoundControllerPercentBass>.Value),
+                            CInt(xPc.<SeqControllerPercent>.Value),
+                            CInt(xPc.<SeqControllerPercentMult>.Value)
+                            )
+                    )
         Next
     End Sub
 
@@ -206,14 +278,32 @@ Public Class FixtureValues
         End Set
     End Property
 
+    Public Property SeqControllerPercentMult(pChannelType As ChannelType) As Integer
+        Get
+            If Not Channels.ContainsKey(pChannelType) Then Return 0
+            Return Channels(pChannelType).SeqControllerPercentMult
+        End Get
+        Set(value As Integer)
+            If Not Channels.ContainsKey(pChannelType) Then Return
+            Channels(pChannelType).SeqControllerPercentMult = value
+        End Set
+    End Property
+
+
+    ''' <summary>
+    ''' 0~255
+    ''' </summary>
     Public Function TotalValue(pChannelType As ChannelType) As Integer
         If Not Channels.ContainsKey(pChannelType) Then Return 0
         With Channels(pChannelType)
-            Return Math.Max(Math.Min(.UserValue _
-                                     + _MainForm._frmSound.SoundController / 100 * .SoundControllerPercent _
-                                     + _MainForm._frmSound.SoundControllerBass / 100 * .SoundControllerBassPercent _
-                                     + _MainForm._frmSeq.SeqController(SeqControllerIdx) / 100 * .SeqControllerPercent _
-                                     , 255), 0)
+            Dim res = .UserValue _
+                            + _MainForm._frmSound.SoundController / 100 * .SoundControllerPercent _
+                            + _MainForm._frmSound.SoundControllerBass / 100 * .SoundControllerBassPercent _
+                            + _MainForm._frmSeq.SeqController(SeqControllerIdx) / 100 * .SeqControllerPercent
+
+            res = res * _MainForm._frmSeqMult.SeqController(SeqControllerIdx) / 255 * .SeqControllerPercentMult / 100 + res * (1 - .SeqControllerPercentMult / 100)
+
+            Return Math.Max(Math.Min(res, 255), 0)
         End With
     End Function
 
@@ -270,14 +360,16 @@ Public Class ChannelData
     Public SoundControllerBassPercent As Integer
     'Public SeqControllerValue As Integer
     Public SeqControllerPercent As Integer
+    Public SeqControllerPercentMult As Integer
 
-    Public Sub New(pChannelType As ChannelType, pMode As Modes, pUserValue As Integer, pSoundControllerPercent As Integer, pSoundControllerBassPercent As Integer, pSeqControllerPercent As Integer)
+    Public Sub New(pChannelType As ChannelType, pMode As Modes, pUserValue As Integer, pSoundControllerPercent As Integer, pSoundControllerBassPercent As Integer, pSeqControllerPercent As Integer, pSeqControllerPercentMult As Integer)
         ChannelType = pChannelType
         Mode = pMode
         UserValue = pUserValue
         SoundControllerPercent = pSoundControllerPercent
         SoundControllerBassPercent = pSoundControllerBassPercent
         SeqControllerPercent = pSeqControllerPercent
+        SeqControllerPercent = pSeqControllerPercentMult
     End Sub
 
 End Class

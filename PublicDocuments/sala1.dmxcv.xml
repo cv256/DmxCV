@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <DMXCV Version="1.1.16.0">
-  <SaveDate>2021-09-26T15:46:48.0890798+01:00</SaveDate>
+  <SaveDate>2022-06-27T21:00:02.7513175+01:00</SaveDate>
   <RefreshRate>30</RefreshRate>
   <Offline>false</Offline>
   <Debug>false</Debug>
@@ -8,17 +8,7 @@
   <Port>0</Port>
   <Sound>
     <Device>Loopback</Device>
-    <Compressor>128</Compressor>
-    <Delay>39</Delay>
-    <Noisegate>0</Noisegate>
-    <Beat>0</Beat>
   </Sound>
-  <Sequencer>
-    <ActiveSequence>Rainbow</ActiveSequence>
-    <BaseSpeed>9</BaseSpeed>
-    <SoundSpeed>7</SoundSpeed>
-    <Mode>Flood</Mode>
-  </Sequencer>
   <Fixture>
     <Name>Luz 2</Name>
     <Address>2</Address>
@@ -57,6 +47,24 @@
   </Fixture>
   <Preset>
     <Name>Strob Colored</Name>
+    <Sequencer>
+      <ActiveSequence></ActiveSequence>
+      <BaseSpeed>0</BaseSpeed>
+      <SoundSpeed>0</SoundSpeed>
+      <Mode></Mode>
+    </Sequencer>
+    <SequencerMult>
+      <ActiveSequence></ActiveSequence>
+      <BaseSpeed>0</BaseSpeed>
+      <SoundSpeed>0</SoundSpeed>
+      <Mode></Mode>
+    </SequencerMult>
+    <Sound>
+      <Compressor>0</Compressor>
+      <Delay>0</Delay>
+      <Noisegate>0</Noisegate>
+      <Beat>0</Beat>
+    </Sound>
     <AffectedFixture>
       <Name>Luz 2</Name>
       <SeqControllerIdx>0</SeqControllerIdx>
@@ -66,6 +74,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>227</Value>
       </PresetChannel>
       <PresetChannel>
@@ -74,6 +83,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>0</Value>
       </PresetChannel>
       <PresetChannel>
@@ -82,6 +92,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
@@ -94,6 +105,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>227</Value>
       </PresetChannel>
       <PresetChannel>
@@ -102,6 +114,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>0</Value>
       </PresetChannel>
       <PresetChannel>
@@ -110,6 +123,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
@@ -122,6 +136,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>227</Value>
       </PresetChannel>
       <PresetChannel>
@@ -130,6 +145,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>0</Value>
       </PresetChannel>
       <PresetChannel>
@@ -138,6 +154,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
@@ -150,6 +167,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>227</Value>
       </PresetChannel>
       <PresetChannel>
@@ -158,6 +176,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>0</Value>
       </PresetChannel>
       <PresetChannel>
@@ -166,12 +185,31 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
   </Preset>
   <Preset>
     <Name>Strob Power</Name>
+    <Sequencer>
+      <ActiveSequence></ActiveSequence>
+      <BaseSpeed>0</BaseSpeed>
+      <SoundSpeed>0</SoundSpeed>
+      <Mode></Mode>
+    </Sequencer>
+    <SequencerMult>
+      <ActiveSequence></ActiveSequence>
+      <BaseSpeed>0</BaseSpeed>
+      <SoundSpeed>0</SoundSpeed>
+      <Mode></Mode>
+    </SequencerMult>
+    <Sound>
+      <Compressor>0</Compressor>
+      <Delay>0</Delay>
+      <Noisegate>0</Noisegate>
+      <Beat>0</Beat>
+    </Sound>
     <AffectedFixture>
       <Name>Luz 2</Name>
       <SeqControllerIdx>0</SeqControllerIdx>
@@ -181,6 +219,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>227</Value>
       </PresetChannel>
       <PresetChannel>
@@ -189,6 +228,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
       <PresetChannel>
@@ -197,6 +237,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
@@ -209,6 +250,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>227</Value>
       </PresetChannel>
       <PresetChannel>
@@ -217,6 +259,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
       <PresetChannel>
@@ -225,6 +268,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
@@ -237,6 +281,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>227</Value>
       </PresetChannel>
       <PresetChannel>
@@ -245,6 +290,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
       <PresetChannel>
@@ -253,6 +299,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
@@ -265,6 +312,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>227</Value>
       </PresetChannel>
       <PresetChannel>
@@ -273,6 +321,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
       <PresetChannel>
@@ -281,12 +330,31 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
   </Preset>
   <Preset>
     <Name>Flash</Name>
+    <Sequencer>
+      <ActiveSequence></ActiveSequence>
+      <BaseSpeed>0</BaseSpeed>
+      <SoundSpeed>0</SoundSpeed>
+      <Mode></Mode>
+    </Sequencer>
+    <SequencerMult>
+      <ActiveSequence></ActiveSequence>
+      <BaseSpeed>0</BaseSpeed>
+      <SoundSpeed>0</SoundSpeed>
+      <Mode></Mode>
+    </SequencerMult>
+    <Sound>
+      <Compressor>0</Compressor>
+      <Delay>0</Delay>
+      <Noisegate>0</Noisegate>
+      <Beat>0</Beat>
+    </Sound>
     <AffectedFixture>
       <Name>Luz 2</Name>
       <SeqControllerIdx>0</SeqControllerIdx>
@@ -296,6 +364,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
       <PresetChannel>
@@ -304,6 +373,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
       <PresetChannel>
@@ -312,6 +382,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>7</Value>
       </PresetChannel>
     </AffectedFixture>
@@ -324,6 +395,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
       <PresetChannel>
@@ -332,6 +404,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
       <PresetChannel>
@@ -340,6 +413,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>7</Value>
       </PresetChannel>
     </AffectedFixture>
@@ -352,6 +426,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
       <PresetChannel>
@@ -360,6 +435,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
       <PresetChannel>
@@ -368,6 +444,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>7</Value>
       </PresetChannel>
     </AffectedFixture>
@@ -380,6 +457,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
       <PresetChannel>
@@ -388,6 +466,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
       <PresetChannel>
@@ -396,12 +475,31 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>7</Value>
       </PresetChannel>
     </AffectedFixture>
   </Preset>
   <Preset>
     <Name>Rainbow RGB</Name>
+    <Sequencer>
+      <ActiveSequence></ActiveSequence>
+      <BaseSpeed>0</BaseSpeed>
+      <SoundSpeed>0</SoundSpeed>
+      <Mode></Mode>
+    </Sequencer>
+    <SequencerMult>
+      <ActiveSequence></ActiveSequence>
+      <BaseSpeed>0</BaseSpeed>
+      <SoundSpeed>0</SoundSpeed>
+      <Mode></Mode>
+    </SequencerMult>
+    <Sound>
+      <Compressor>0</Compressor>
+      <Delay>0</Delay>
+      <Noisegate>0</Noisegate>
+      <Beat>0</Beat>
+    </Sound>
     <AffectedFixture>
       <Name>Luz 2</Name>
       <SeqControllerIdx>0</SeqControllerIdx>
@@ -411,6 +509,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>124</Value>
       </PresetChannel>
       <PresetChannel>
@@ -419,6 +518,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>129</Value>
       </PresetChannel>
       <PresetChannel>
@@ -427,6 +527,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
@@ -439,6 +540,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>124</Value>
       </PresetChannel>
       <PresetChannel>
@@ -447,6 +549,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>129</Value>
       </PresetChannel>
       <PresetChannel>
@@ -455,6 +558,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
@@ -467,6 +571,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>124</Value>
       </PresetChannel>
       <PresetChannel>
@@ -475,6 +580,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>129</Value>
       </PresetChannel>
       <PresetChannel>
@@ -483,6 +589,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
@@ -495,6 +602,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>124</Value>
       </PresetChannel>
       <PresetChannel>
@@ -503,6 +611,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>129</Value>
       </PresetChannel>
       <PresetChannel>
@@ -511,12 +620,31 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
   </Preset>
   <Preset>
     <Name>Rainbow All Colors</Name>
+    <Sequencer>
+      <ActiveSequence></ActiveSequence>
+      <BaseSpeed>0</BaseSpeed>
+      <SoundSpeed>0</SoundSpeed>
+      <Mode></Mode>
+    </Sequencer>
+    <SequencerMult>
+      <ActiveSequence></ActiveSequence>
+      <BaseSpeed>0</BaseSpeed>
+      <SoundSpeed>0</SoundSpeed>
+      <Mode></Mode>
+    </SequencerMult>
+    <Sound>
+      <Compressor>0</Compressor>
+      <Delay>0</Delay>
+      <Noisegate>0</Noisegate>
+      <Beat>0</Beat>
+    </Sound>
     <AffectedFixture>
       <Name>Luz 2</Name>
       <SeqControllerIdx>0</SeqControllerIdx>
@@ -526,6 +654,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>125</Value>
       </PresetChannel>
       <PresetChannel>
@@ -534,6 +663,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>0</Value>
       </PresetChannel>
       <PresetChannel>
@@ -542,6 +672,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
@@ -554,6 +685,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>125</Value>
       </PresetChannel>
       <PresetChannel>
@@ -562,6 +694,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>0</Value>
       </PresetChannel>
       <PresetChannel>
@@ -570,6 +703,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
@@ -582,6 +716,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>125</Value>
       </PresetChannel>
       <PresetChannel>
@@ -590,6 +725,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>0</Value>
       </PresetChannel>
       <PresetChannel>
@@ -598,6 +734,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
@@ -610,6 +747,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>125</Value>
       </PresetChannel>
       <PresetChannel>
@@ -618,6 +756,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>0</Value>
       </PresetChannel>
       <PresetChannel>
@@ -626,12 +765,31 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
   </Preset>
   <Preset>
     <Name>Music Colored</Name>
+    <Sequencer>
+      <ActiveSequence></ActiveSequence>
+      <BaseSpeed>0</BaseSpeed>
+      <SoundSpeed>0</SoundSpeed>
+      <Mode></Mode>
+    </Sequencer>
+    <SequencerMult>
+      <ActiveSequence></ActiveSequence>
+      <BaseSpeed>0</BaseSpeed>
+      <SoundSpeed>0</SoundSpeed>
+      <Mode></Mode>
+    </SequencerMult>
+    <Sound>
+      <Compressor>0</Compressor>
+      <Delay>0</Delay>
+      <Noisegate>0</Noisegate>
+      <Beat>0</Beat>
+    </Sound>
     <AffectedFixture>
       <Name>Luz 2</Name>
       <SeqControllerIdx>0</SeqControllerIdx>
@@ -641,6 +799,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>176</Value>
       </PresetChannel>
       <PresetChannel>
@@ -649,6 +808,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>0</Value>
       </PresetChannel>
       <PresetChannel>
@@ -657,6 +817,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
@@ -669,6 +830,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>176</Value>
       </PresetChannel>
       <PresetChannel>
@@ -677,6 +839,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>0</Value>
       </PresetChannel>
       <PresetChannel>
@@ -685,6 +848,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
@@ -697,6 +861,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>176</Value>
       </PresetChannel>
       <PresetChannel>
@@ -705,6 +870,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>0</Value>
       </PresetChannel>
       <PresetChannel>
@@ -713,6 +879,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
@@ -725,6 +892,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>176</Value>
       </PresetChannel>
       <PresetChannel>
@@ -733,6 +901,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>0</Value>
       </PresetChannel>
       <PresetChannel>
@@ -741,12 +910,31 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
   </Preset>
   <Preset>
     <Name>Music Power</Name>
+    <Sequencer>
+      <ActiveSequence></ActiveSequence>
+      <BaseSpeed>0</BaseSpeed>
+      <SoundSpeed>0</SoundSpeed>
+      <Mode></Mode>
+    </Sequencer>
+    <SequencerMult>
+      <ActiveSequence></ActiveSequence>
+      <BaseSpeed>0</BaseSpeed>
+      <SoundSpeed>0</SoundSpeed>
+      <Mode></Mode>
+    </SequencerMult>
+    <Sound>
+      <Compressor>0</Compressor>
+      <Delay>0</Delay>
+      <Noisegate>0</Noisegate>
+      <Beat>0</Beat>
+    </Sound>
     <AffectedFixture>
       <Name>Luz 2</Name>
       <SeqControllerIdx>0</SeqControllerIdx>
@@ -756,6 +944,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>176</Value>
       </PresetChannel>
       <PresetChannel>
@@ -764,6 +953,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
       <PresetChannel>
@@ -772,6 +962,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
@@ -784,6 +975,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>176</Value>
       </PresetChannel>
       <PresetChannel>
@@ -792,6 +984,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
       <PresetChannel>
@@ -800,6 +993,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
@@ -812,6 +1006,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>176</Value>
       </PresetChannel>
       <PresetChannel>
@@ -820,6 +1015,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
       <PresetChannel>
@@ -828,6 +1024,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
@@ -840,6 +1037,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>176</Value>
       </PresetChannel>
       <PresetChannel>
@@ -848,6 +1046,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
       <PresetChannel>
@@ -856,12 +1055,31 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>255</Value>
       </PresetChannel>
     </AffectedFixture>
   </Preset>
   <Preset>
     <Name>DMX Party</Name>
+    <Sequencer>
+      <ActiveSequence>Wave</ActiveSequence>
+      <BaseSpeed>24</BaseSpeed>
+      <SoundSpeed>10</SoundSpeed>
+      <Mode>FLOOD</Mode>
+    </Sequencer>
+    <SequencerMult>
+      <ActiveSequence>Chase</ActiveSequence>
+      <BaseSpeed>47</BaseSpeed>
+      <SoundSpeed>55</SoundSpeed>
+      <Mode>CHASE</Mode>
+    </SequencerMult>
+    <Sound>
+      <Compressor>16</Compressor>
+      <Delay>30</Delay>
+      <Noisegate>48</Noisegate>
+      <Beat>62</Beat>
+    </Sound>
     <AffectedFixture>
       <Name>Luz 2</Name>
       <SeqControllerIdx>0</SeqControllerIdx>
@@ -871,6 +1089,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>0</Value>
       </PresetChannel>
       <PresetChannel>
@@ -879,6 +1098,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>0</Value>
       </PresetChannel>
       <PresetChannel>
@@ -887,47 +1107,53 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>146</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>Intensity</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>0</SoundControllerPercent>
-        <SoundControllerPercentBass>0</SoundControllerPercentBass>
+        <SoundControllerPercent>13</SoundControllerPercent>
+        <SoundControllerPercentBass>14</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>255</Value>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
+        <Value>240</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>Red</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
-        <SeqControllerPercent>100</SeqControllerPercent>
+        <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>0</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>Green</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>0</SoundControllerPercent>
-        <SoundControllerPercentBass>0</SoundControllerPercentBass>
+        <SoundControllerPercent>4</SoundControllerPercent>
+        <SoundControllerPercentBass>5</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>255</Value>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
+        <Value>242</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>Blue</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>100</SoundControllerPercent>
-        <SoundControllerPercentBass>0</SoundControllerPercentBass>
+        <SoundControllerPercent>7</SoundControllerPercent>
+        <SoundControllerPercentBass>8</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>35</Value>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
+        <Value>57</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>White</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
-        <SoundControllerPercentBass>400</SoundControllerPercentBass>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>0</Value>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
+        <Value>118</Value>
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
@@ -939,6 +1165,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>0</Value>
       </PresetChannel>
       <PresetChannel>
@@ -947,6 +1174,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>0</Value>
       </PresetChannel>
       <PresetChannel>
@@ -955,47 +1183,53 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>146</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>Intensity</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>0</SoundControllerPercent>
-        <SoundControllerPercentBass>0</SoundControllerPercentBass>
+        <SoundControllerPercent>13</SoundControllerPercent>
+        <SoundControllerPercentBass>14</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>255</Value>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
+        <Value>240</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>Red</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
-        <SeqControllerPercent>100</SeqControllerPercent>
+        <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>0</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>Green</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>0</SoundControllerPercent>
-        <SoundControllerPercentBass>0</SoundControllerPercentBass>
+        <SoundControllerPercent>4</SoundControllerPercent>
+        <SoundControllerPercentBass>5</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>255</Value>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
+        <Value>242</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>Blue</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>100</SoundControllerPercent>
-        <SoundControllerPercentBass>0</SoundControllerPercentBass>
+        <SoundControllerPercent>7</SoundControllerPercent>
+        <SoundControllerPercentBass>8</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>35</Value>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
+        <Value>57</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>White</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
-        <SoundControllerPercentBass>400</SoundControllerPercentBass>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>0</Value>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
+        <Value>118</Value>
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
@@ -1007,6 +1241,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>0</Value>
       </PresetChannel>
       <PresetChannel>
@@ -1015,6 +1250,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>0</Value>
       </PresetChannel>
       <PresetChannel>
@@ -1023,47 +1259,53 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>146</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>Intensity</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>0</SoundControllerPercent>
-        <SoundControllerPercentBass>0</SoundControllerPercentBass>
+        <SoundControllerPercent>13</SoundControllerPercent>
+        <SoundControllerPercentBass>14</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>255</Value>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
+        <Value>240</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>Red</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
-        <SeqControllerPercent>100</SeqControllerPercent>
+        <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>0</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>Green</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>0</SoundControllerPercent>
-        <SoundControllerPercentBass>0</SoundControllerPercentBass>
+        <SoundControllerPercent>4</SoundControllerPercent>
+        <SoundControllerPercentBass>5</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>255</Value>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
+        <Value>242</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>Blue</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>100</SoundControllerPercent>
-        <SoundControllerPercentBass>0</SoundControllerPercentBass>
+        <SoundControllerPercent>7</SoundControllerPercent>
+        <SoundControllerPercentBass>8</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>35</Value>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
+        <Value>57</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>White</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
-        <SoundControllerPercentBass>400</SoundControllerPercentBass>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>0</Value>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
+        <Value>118</Value>
       </PresetChannel>
     </AffectedFixture>
     <AffectedFixture>
@@ -1075,6 +1317,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>0</Value>
       </PresetChannel>
       <PresetChannel>
@@ -1083,6 +1326,7 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>0</Value>
       </PresetChannel>
       <PresetChannel>
@@ -1091,47 +1335,53 @@
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>146</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>Intensity</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>0</SoundControllerPercent>
-        <SoundControllerPercentBass>0</SoundControllerPercentBass>
+        <SoundControllerPercent>13</SoundControllerPercent>
+        <SoundControllerPercentBass>14</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>255</Value>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
+        <Value>240</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>Red</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
         <SoundControllerPercentBass>0</SoundControllerPercentBass>
-        <SeqControllerPercent>100</SeqControllerPercent>
+        <SeqControllerPercent>0</SeqControllerPercent>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
         <Value>0</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>Green</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>0</SoundControllerPercent>
-        <SoundControllerPercentBass>0</SoundControllerPercentBass>
+        <SoundControllerPercent>4</SoundControllerPercent>
+        <SoundControllerPercentBass>5</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>255</Value>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
+        <Value>242</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>Blue</Type>
         <Mode>Show</Mode>
-        <SoundControllerPercent>100</SoundControllerPercent>
-        <SoundControllerPercentBass>0</SoundControllerPercentBass>
+        <SoundControllerPercent>7</SoundControllerPercent>
+        <SoundControllerPercentBass>8</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>35</Value>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
+        <Value>57</Value>
       </PresetChannel>
       <PresetChannel>
         <Type>White</Type>
         <Mode>Show</Mode>
         <SoundControllerPercent>0</SoundControllerPercent>
-        <SoundControllerPercentBass>400</SoundControllerPercentBass>
+        <SoundControllerPercentBass>0</SoundControllerPercentBass>
         <SeqControllerPercent>0</SeqControllerPercent>
-        <Value>0</Value>
+        <SeqControllerPercentMult>0</SeqControllerPercentMult>
+        <Value>118</Value>
       </PresetChannel>
     </AffectedFixture>
   </Preset>
