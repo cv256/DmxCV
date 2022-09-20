@@ -81,7 +81,7 @@
 
     Public Function HSVtoRGB(ByVal H As Integer, ByVal S As Integer, ByVal V As Integer) As RGB
         ''# Scale the Saturation and Value components to be between 0 and 1
-        Dim hue As Decimal = H
+        Dim hue As Decimal = (H Mod 361)
         Dim sat As Decimal = S / 100D
         Dim val As Decimal = V / 100D
 

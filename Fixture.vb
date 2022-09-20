@@ -21,7 +21,7 @@
                     strResult = ""
                 End If
             End If
-            strDebug &= "   Ch " & (Address + Channels(c.ChannelType).Address) & " = " & v & If(strResult > "", "   result = " & strResult, "") & "   (" & c.ChannelType.ToString & ")" & vbCrLf
+            strDebug &= "   Ch " & (Address + Channels(c.ChannelType).Address) & " = " & v & "   (" & c.ChannelType.ToString & ")" & vbCrLf
         Next
         Return strDebug
     End Function

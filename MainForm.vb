@@ -41,7 +41,8 @@
     Private Sub FixtureUpdated(pDebugInfo As String)
         If Not String.IsNullOrEmpty(pDebugInfo) Then
             If Debug IsNot Nothing AndAlso Debug.Visible Then
-                Debug.AppendText("   Last update was " & CLng(Now.Subtract(_LastUpdate).TotalMilliseconds) & "ms ago" & vbCrLf & pDebugInfo)
+                'Debug.AppendText("   Last update was " & CLng(Now.Subtract(_LastUpdate).TotalMilliseconds) & "ms ago" & vbCrLf & pDebugInfo)
+                Debug.AppendText(pDebugInfo)
             End If
             _LastUpdate = Now
             If Me.Visible AndAlso ckPreview.Checked Then
@@ -51,6 +52,12 @@
             End If
         End If
         If frmFixture IsNot Nothing AndAlso frmFixture.Visible Then frmFixture.PaintVUs()
+    End Sub
+
+
+    Public Sub DebugWriteError(msg As String)
+        ckDebug.BackColor = Color.Red
+        If Debug IsNot Nothing Then Debug.AppendText(vbCrLf & msg & vbCrLf)
     End Sub
 
     Private Sub PaintBackground(sender As Object, e As PaintEventArgs) Handles Me.Paint
@@ -197,6 +204,7 @@
         _frmSeq.Advance()
         _frmSeqMult.Advance()
         Dim tmpDebug As String = "" ', cIdx As Integer = 0
+        ckDebug.BackColor = Color.Transparent
         For Each f As FixtureTemplate In Fixtures
             'Dim p As Preset = Presets(f.ActivePreset)
             'For Each c As ChannelData In p.values
@@ -392,14 +400,6 @@
         If Debug IsNot Nothing Then Debug.Close()
         dmx = Nothing
         End
-    End Sub
-
-    Public Sub DebugWriteError(msg As String)
-        If Debug Is Nothing Then
-            Debug = New frmDebug
-        End If
-        Debug.AppendText(vbCrLf & msg & vbCrLf)
-        ckDebug.Checked = True
     End Sub
 
 End Class

@@ -369,7 +369,7 @@ Public Class ChannelData
         SoundControllerPercent = pSoundControllerPercent
         SoundControllerBassPercent = pSoundControllerBassPercent
         SeqControllerPercent = pSeqControllerPercent
-        SeqControllerPercent = pSeqControllerPercentMult
+        SeqControllerPercentMult = pSeqControllerPercentMult
     End Sub
 
 End Class
