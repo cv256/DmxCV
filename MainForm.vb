@@ -338,19 +338,31 @@
                     MsgBox(String.Format("You need to add some <Preset> to «{0}»", pFileName), MsgBoxStyle.Critical)
                     End
                 End If
-                For Each f As FixtureTemplate In Fixtures
-                    Dim foundIt As Boolean = False
-                    For Each p As Preset In Presets.Values
-                        If p.AffectedFixtures.ContainsKey(f) Then
-                            foundIt = True
-                            Exit For
+                For Each p As Preset In Presets.Values
+                    For Each f As FixtureTemplate In Fixtures
+                        If Not p.AffectedFixtures.ContainsKey(f) Then
+                            If p.AffectedFixtures.Count > 0 Then
+                                p.AffectedFixtures.Add(f, p.AffectedFixtures.Last.Value) ' só para desenrrascar... se se gravar o XML e se editar no notepad já fica mais facil
+                            Else
+                                MsgBox($"Fixture «{f.Name}» is not Affected by the Preset «{p.Name}» in {pFileName}", MsgBoxStyle.Critical)
+                            End If
                         End If
                     Next
-                    If Not foundIt Then
-                        MsgBox(String.Format("Fixture «{0}» is not Affected by any of the <Preset> in {1}", f.Name, pFileName), MsgBoxStyle.Critical)
-                        End
-                    End If
                 Next
+
+                'For Each f As FixtureTemplate In Fixtures
+                '    Dim foundIt As Boolean = False
+                '    For Each p As Preset In Presets.Values
+                '        If p.AffectedFixtures.ContainsKey(f) Then
+                '            foundIt = True
+                '            Exit For
+                '        End If
+                '    Next
+                '    If Not foundIt Then
+                '        MsgBox(String.Format("Fixture «{0}» is not Affected by any of the <Preset> in {1}", f.Name, pFileName), MsgBoxStyle.Critical)
+                '        End
+                '    End If
+                'Next
 
                 _frmSound.SetDevice(.<Sound>.<Device>.Value)
 

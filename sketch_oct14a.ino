@@ -1,4 +1,4 @@
-// Arduino Nano clone windowsdriver=«USB-SERIAL CH340»   Processor=328P(Old)   Programmer=«Arduino As ISP»
+// Arduino Nano clone windowsdriver=«USB-SERIAL CH340»   Processor=328P(Old)   Board=«Arduino Duomilanove»   Programmer=«Arduino As ISP»
 
 /* DmxSimple is compatible with the Tinker.it! DMX shield and all known DIY Arduino DMX control circuits.
 ** DmxSimple is available from: http://code.google.com/p/tinkerit/
@@ -8,7 +8,7 @@
 // Timer 2 is used. 
 #include <DmxSimple.h>
 
-#define MAXCH 34
+#define MAXCH 50 
 
 unsigned long waiting=0;
 

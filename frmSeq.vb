@@ -1,5 +1,4 @@
-﻿
-Public Class frmSeq
+﻿Public Class frmSeq
 
     Private ReadOnly Sequences As New List(Of Sequence)
     Private ActiveSequence As Sequence, SequencePosition As Decimal
@@ -19,25 +18,25 @@ Public Class frmSeq
         PresetSeq = pPresetSeq
         If SeqControllers.Count = 0 Then
             ' Inits 4 controller channels:
-            For cIdx As Integer = 0 To 3 : SeqControllers.Add(0) : Next
+            For cIdx As Integer = 1 To _MainForm.Fixtures.Count : SeqControllers.Add(0) : Next
 
             ' Create the available Sequences:
             Dim tmpS As Sequence
 
-            tmpS = New Sequence With {.Name = "Rainbow", .Distance = 256 / 4, .SpeedFactor = 1, .PreviewMode = Sequence.PreviewModes.Color}
+            tmpS = New Sequence With {.Name = "Rainbow", .PreviewMode = Sequence.PreviewModes.Color} ' , .Distance = 256 / 4, .SpeedFactor = 1
             For i As Integer = 0 To 255 : tmpS.Values.Add(i) : Next i
             Sequences.Add(tmpS)
 
-            tmpS = New Sequence With {.Name = "Wave", .Distance = 256 / 4, .SpeedFactor = 1, .PreviewMode = Sequence.PreviewModes.PowerColor}
+            tmpS = New Sequence With {.Name = "Wave", .PreviewMode = Sequence.PreviewModes.Color} ' , .Distance = 256 / 4, .SpeedFactor = 1
             For i As Integer = 0 To 255 : tmpS.Values.Add(127 + Math.Sin(i / 255 * Math.PI * 2) * 127) : Next i
             Sequences.Add(tmpS)
 
-            tmpS = New Sequence With {.Name = "Chase soft", .Distance = 256 / 4, .SpeedFactor = 1, .PreviewMode = Sequence.PreviewModes.PowerColor}
-            For i As Integer = 0 To 64 : tmpS.Values.Add(Math.Sin(i / 64 * Math.PI) * 255) : Next i : For i As Integer = 65 To 255 : tmpS.Values.Add(0) : Next i
+            tmpS = New Sequence With {.Name = "Chase soft", .PreviewMode = Sequence.PreviewModes.Power} ' , .Distance = 256 / 4, .SpeedFactor = 1
+            For i As Integer = 0 To 255 : tmpS.Values.Add(If(i > (320 / SeqControllers.Count), 0, Math.Sin(i / (320 / SeqControllers.Count) * Math.PI) * 255)) : Next
             Sequences.Add(tmpS)
 
-            tmpS = New Sequence With {.Name = "Chase", .Distance = 1, .SpeedFactor = 0.02, .PreviewMode = Sequence.PreviewModes.Power}
-            tmpS.Values.Add(255) : tmpS.Values.Add(0) : tmpS.Values.Add(0) : tmpS.Values.Add(0)
+            tmpS = New Sequence With {.Name = "Chase", .PreviewMode = Sequence.PreviewModes.Power} ' , .Distance = 1, .SpeedFactor = 0.02
+            For i As Integer = 0 To 255 : tmpS.Values.Add(If(i > (255 / SeqControllers.Count), 0, 255)) : Next
             Sequences.Add(tmpS)
 
             ' Init the Form:
@@ -54,7 +53,8 @@ Public Class frmSeq
             End If
         Next
         trSpeed.Value = pPresetSeq.BaseSpeed
-        txtSound.Text = pPresetSeq.SoundSpeed
+        trSound.Value = pPresetSeq.SoundSpeed
+        trBass.Value = pPresetSeq.BassSpeed
         If Not String.IsNullOrEmpty(pPresetSeq.Mode) Then
             If pPresetSeq.Mode.ToUpper = "FLOOD" Then rdFlood.Checked = True
             If pPresetSeq.Mode.ToUpper = "CHASE" Then rdChase.Checked = True
@@ -63,14 +63,14 @@ Public Class frmSeq
 
     Public Sub Advance()
         If ActiveSequence Is Nothing Then Return
-        Dim tmpSpeed As Integer = Math.Min(450, PresetSeq.BaseSpeed + PresetSeq.SoundSpeed / 60 * _MainForm._frmSound.SoundController)
-        Using g As Graphics = trSpeed.CreateGraphics
-            Dim l As Integer = Math.Min(255, tmpSpeed) / 255 * (trSpeed.Height - 12 - 12)
-            g.DrawLine(Pens.Orange, trSpeed.Width - 15, trSpeed.Height - 12, trSpeed.Width - 15, trSpeed.Height - 12 - l)
-            g.DrawLine(Pens.DarkRed, trSpeed.Width - 15, trSpeed.Height - 12 - l, trSpeed.Width - 15, 12)
+        Dim tmpSpeed As Integer = Math.Min(450, PresetSeq.BaseSpeed + PresetSeq.SoundSpeed / 60 * _MainForm._frmSound.SoundController + PresetSeq.BassSpeed / 60 * _MainForm._frmSound.SoundControllerBass)
+        Using g As Graphics = trBass.CreateGraphics
+            Dim l As Integer = Math.Min(255, tmpSpeed) / 255 * (trBass.Height - 12 - 12)
+            g.DrawLine(Pens.Orange, trBass.Width - 2, trBass.Height - 12, trBass.Width - 2, trBass.Height - 12 - l)
+            g.DrawLine(Pens.DarkRed, trBass.Width - 2, trBass.Height - 12 - l, trBass.Width - 2, 12)
         End Using
 
-        SequencePosition += tmpSpeed ^ 1.5 / 80 * ActiveSequence.SpeedFactor ' speed=255 <=> 4 full cycles per second @ timer.interval=50ms
+        SequencePosition += tmpSpeed ^ 1.5 / 80 '* ActiveSequence.SpeedFactor ' speed=255 <=> 4 full cycles per second @ timer.interval=50ms
         SequencePosition = TurnAround(SequencePosition)
         Dim i As Integer = Math.Truncate(SequencePosition)
         Dim sweepAngle As Single = IIf(rdFlood.Checked, 360, 360 / SeqControllers.Count)
@@ -87,7 +87,7 @@ Public Class frmSeq
                         rgb = New RGB With {.r = SeqController(cIdx), .g = SeqController(cIdx), .b = SeqController(cIdx)}
                 End Select
                 .FillPie(New SolidBrush(Color.FromArgb(rgb.r, rgb.g, rgb.b)), Panel1.ClientRectangle, sweepAngle * (cIdx - 2), sweepAngle)
-                i = TurnAround(i + ActiveSequence.Distance)
+                i = TurnAround(i + (256 / SeqControllers.Count))
             Next
         End With
     End Sub
@@ -122,10 +122,6 @@ Public Class frmSeq
         End With
     End Sub
 
-    Private Sub lbSound_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbSound.LinkClicked
-        _MainForm._frmSound.Visible = True
-    End Sub
-
     Private Sub lstSeq_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstSeq.SelectedIndexChanged
         Dim s = lstSeq.SelectedItem
         If s Is Nothing Then Return
@@ -138,24 +134,27 @@ Public Class frmSeq
     Private Sub trSpeed_Scroll(sender As Object, e As EventArgs) Handles trSpeed.Scroll
         If PresetSeq IsNot Nothing Then PresetSeq.BaseSpeed = trSpeed.Value
     End Sub
-
-    Private Sub txtSound_TextChanged(sender As Object, e As EventArgs) Handles txtSound.TextChanged
-        If PresetSeq IsNot Nothing Then PresetSeq.SoundSpeed = TextBoxValue(txtSound)
+    Private Sub trSound_Scroll(sender As Object, e As EventArgs) Handles trSound.Scroll
+        If PresetSeq IsNot Nothing Then PresetSeq.SoundSpeed = trSound.Value
+    End Sub
+    Private Sub trBass_Scroll(sender As Object, e As EventArgs) Handles trBass.Scroll
+        If PresetSeq IsNot Nothing Then PresetSeq.BassSpeed = trBass.Value
     End Sub
 
     Private Sub rdChase_CheckedChanged(sender As Object, e As EventArgs) Handles rdChase.CheckedChanged
         If PresetSeq IsNot Nothing Then PresetSeq.Mode = "CHASE"
     End Sub
-
     Private Sub rdFlood_CheckedChanged(sender As Object, e As EventArgs) Handles rdFlood.CheckedChanged
         If PresetSeq IsNot Nothing Then PresetSeq.Mode = "FLOOD"
     End Sub
 
+
+
     Private Class Sequence
         Public Name As String
         Public ReadOnly Values As New List(Of Integer) ' 0~255
-        Public Distance As Integer
-        Public SpeedFactor As Decimal
+        '        Public Distance As Integer
+        '       Public SpeedFactor As Decimal
         Public PreviewMode As PreviewModes
         Public Enum PreviewModes
             Power

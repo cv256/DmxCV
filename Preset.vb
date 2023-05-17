@@ -1,10 +1,11 @@
 ﻿Public Class PresetSeq
-    Public SequenceName As String, BaseSpeed As Integer, SoundSpeed As Integer, Mode As String
+    Public SequenceName As String, BaseSpeed As Integer, SoundSpeed As Integer, BassSpeed As Integer, Mode As String
     Public Function Serialize(pMult As Boolean) As XElement
         Dim res As New XElement("Sequencer" + If(pMult, "Mult", ""),
             New XElement("ActiveSequence", SequenceName),
             New XElement("BaseSpeed", BaseSpeed),
             New XElement("SoundSpeed", SoundSpeed),
+            New XElement("BassSpeed", BassSpeed),
             New XElement("Mode", Mode)
         )
         Return res
@@ -14,6 +15,7 @@
         SequenceName = x.<ActiveSequence>.Value
         BaseSpeed = x.<BaseSpeed>.Value
         SoundSpeed = x.<SoundSpeed>.Value
+        BassSpeed = x.<BassSpeed>.Value
         Mode = x.<Mode>.Value
     End Sub
 End Class
