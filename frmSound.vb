@@ -7,7 +7,7 @@ Public Class frmSound
 
     Private myCapturer 'As Wave.WaveIn
     Private myLowpass As Dsp.BiQuadFilter
-    Private lastMax As New Queue(Of Byte)
+    Private lastMax As New Queue(Of Byte), lastMaxB As New Queue(Of Byte)
     Private PresetSound As PresetSound
 
     Public Sub SetDevice(deviceName As String)
@@ -29,7 +29,10 @@ Public Class frmSound
         trCompressor.Value = Math.Min(Math.Max(PresetSound.Compressor, trCompressor.Minimum), trCompressor.Maximum)
         trDelay.Value = Math.Min(Math.Max(PresetSound.Delay, trDelay.Minimum), trDelay.Maximum)
         trNoise.Value = Math.Min(Math.Max(PresetSound.Noisegate, trNoise.Minimum), trNoise.Maximum)
-        trBeat.Value = Math.Min(Math.Max(PresetSound.Beat, trBeat.Minimum), trBeat.Maximum)
+        trSoften.Value = Math.Min(Math.Max(PresetSound.Soften, trSoften.Minimum), trSoften.Maximum)
+        trCompressorB.Value = Math.Min(Math.Max(PresetSound.CompressorB, trCompressorB.Minimum), trCompressorB.Maximum)
+        trDelayB.Value = Math.Min(Math.Max(PresetSound.Delayb, trDelayB.Minimum), trDelayB.Maximum)
+        trNoiseB.Value = Math.Min(Math.Max(PresetSound.Noisegateb, trNoiseB.Minimum), trNoiseB.Maximum)
     End Sub
 
     Private Sub cmbDevices_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbDevices.SelectedIndexChanged
@@ -100,9 +103,22 @@ Public Class frmSound
         PresetSound.Noisegate = trNoise.Value
     End Sub
 
-    Private Sub trBeat_Scroll(sender As Object, e As EventArgs) Handles trBeat.Scroll
-        PresetSound.Beat = trBeat.Value
+    Private Sub trCompressorB_Scroll(sender As Object, e As EventArgs) Handles trCompressorB.Scroll
+        PresetSound.CompressorB = trCompressorB.Value
     End Sub
+
+    Private Sub trDelayB_Scroll(sender As Object, e As EventArgs) Handles trDelayB.Scroll
+        PresetSound.DelayB = trDelayB.Value
+    End Sub
+
+    Private Sub trSoften_Scroll(sender As Object, e As EventArgs) Handles trSoften.Scroll
+        PresetSound.Soften = trSoften.Value
+    End Sub
+
+    Private Sub trNoiseB_Scroll(sender As Object, e As EventArgs) Handles trNoiseB.Scroll
+        PresetSound.NoisegateB = trNoiseB.Value
+    End Sub
+
 
     Private Sub DataAvailable(e As Wave.WaveInEventArgs, pBlockAlign As Integer, pSampleRate As Integer)
         'Dim maxInput As Byte = 0 ' Max over myCapturer.BufferMilliseconds 0~128
@@ -128,14 +144,9 @@ Public Class frmSound
     Public Sub CalculateSoundController()
         lastMax.Enqueue(maxInput)
         ' Compressor:
-        Dim beatPercent As Decimal = 0
         Dim CompressionLevel As Decimal = PresetSound.Compressor
         Dim compressionDelay As Decimal = PresetSound.Delay ^ 2
-        Dim maxOverBPM As Byte = 0, minOverBPM As Byte = 255 ' 0~128
-        For Each m As Byte In lastMax
-            If m > maxOverBPM Then maxOverBPM = m
-            If m < minOverBPM Then minOverBPM = m
-        Next
+        Dim maxOverBPM As Byte = lastMax.Max(Function(v) v)  ' 0~128
         Do While lastMax.Count > compressionDelay / _MainForm.RefreshRate
             lastMax.Dequeue()
         Loop
@@ -147,18 +158,34 @@ Public Class frmSound
             If CompressionLevel > 0 Then amplificationFactor = (128 + 128 - CompressionLevel + 1) / (maxOverBPM + 128 - CompressionLevel + 1)
             lbNoise.ForeColor = Color.White
         End If
+        SoundController = Math.Max(Math.Min(SoundController * (PresetSound.Soften / 100) + (maxInput * amplificationFactor * 2) * (1 - (PresetSound.Soften / 100)), 255), 0) '  0~255
 
-        Dim tmpMid As Decimal = minOverBPM + (maxInput - minOverBPM) / 2
-        If (maxOverBPM - minOverBPM) <> 0 Then beatPercent = Math.Max(((maxInput - tmpMid) / (maxOverBPM - tmpMid)), 0) ' 0 ~ 1
-        SoundController = Math.Max(Math.Min(maxInput * amplificationFactor * 2 * ((1 - PresetSound.Beat / 100) + beatPercent * PresetSound.Beat / 100), 255), 0) '  0~255
-        SoundControllerBass = Math.Max(Math.Min(maxInputBass * amplificationFactor * 4, 255), 0) ^ 4 / 16581375 '  0~255
+        lastMaxB.Enqueue(maxInputBass)
+        ' Compressor:
+        Dim CompressionLevelB As Decimal = PresetSound.CompressorB
+        Dim compressionDelayB As Decimal = PresetSound.DelayB ^ 2
+        maxOverBPM = lastMaxB.Max(Function(v) v)  ' 0~128
+        Do While lastMaxB.Count > compressionDelayB / _MainForm.RefreshRate
+            lastMaxB.Dequeue()
+        Loop
+        Dim amplificationFactorB As Decimal = 1
+        If maxInputBass < trNoiseB.Value Then
+            amplificationFactorB = 0.5
+            lbNoiseb.ForeColor = Color.Red
+        Else
+            If CompressionLevelB > 0 Then amplificationFactorB = (128 + 128 - CompressionLevelB + 1) / (maxOverBPM + 128 - CompressionLevelB + 1)
+            lbNoiseb.ForeColor = Color.White
+        End If
+        SoundControllerBass = Math.Max(Math.Min(maxInputBass * amplificationFactorB * 4, 255), 0) ^ 4 / 16581375 '  0~255
 
         ' graphs:
         If Me.Visible Then
             Label1.Text = "Compressor " & (CompressionLevel / 128 * 100).ToString("0.00") & "% :"
             Label3.Text = "Delay " & compressionDelay.ToString("0") & " ms :" & lastMax.Count
             Label4.Text = "Factor x " & amplificationFactor.ToString("0.00") & " :"
-            Label5.Text = "Beat " & PresetSound.Beat & "% :"
+            Label8.Text = "Compressor " & (CompressionLevelB / 128 * 100).ToString("0.00") & "% :"
+            Label7.Text = "Delay " & compressionDelayB.ToString("0") & " ms :" & lastMax.Count
+            Label4B.Text = "Factor x " & amplificationFactorB.ToString("0.00") & " :"
             With Me.CreateGraphics
                 Dim tmpMax As Integer = maxInput / 128 * cmbDevices.Width
                 .DrawLine(Pens.Yellow, cmbDevices.Left, cmbDevices.Bottom + 2, cmbDevices.Left + tmpMax, cmbDevices.Bottom + 2)
@@ -167,10 +194,9 @@ Public Class frmSound
                 tmpMax = Math.Min(amplificationFactor / 30, 1) * trDelay.Width
                 .DrawLine(Pens.Blue, cmbDevices.Left, Label4.Bottom + 2, cmbDevices.Left + tmpMax, Label4.Bottom + 2)
                 .DrawLine(Pens.DimGray, cmbDevices.Left + tmpMax, Label4.Bottom + 2, cmbDevices.Right, Label4.Bottom + 2)
-
-                tmpMax = beatPercent * trDelay.Width
-                .DrawLine(Pens.Blue, cmbDevices.Left, Label6.Bottom + 2, cmbDevices.Left + tmpMax, Label6.Bottom + 2)
-                .DrawLine(Pens.DimGray, cmbDevices.Left + tmpMax, Label6.Bottom + 2, cmbDevices.Right, Label6.Bottom + 2)
+                tmpMax = Math.Min(amplificationFactorB / 30, 1) * trDelay.Width
+                .DrawLine(Pens.Blue, cmbDevices.Left, Label4B.Bottom + 2, cmbDevices.Left + tmpMax, Label4B.Bottom + 2)
+                .DrawLine(Pens.DimGray, cmbDevices.Left + tmpMax, Label4B.Bottom + 2, cmbDevices.Right, Label4B.Bottom + 2)
 
                 tmpMax = SoundController / 255 * cmbDevices.Width
                 .FillRectangle(Brushes.Red, cmbDevices.Left, chkMonitor.Top + 2, tmpMax, 8)

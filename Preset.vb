@@ -21,14 +21,17 @@
 End Class
 
 Public Class PresetSound
-    Public Compressor As Integer, Delay As Integer, Noisegate As Integer, Beat As Integer
+    Public Compressor As Integer, Delay As Integer, Noisegate As Integer, Soften As Integer, CompressorB As Integer, DelayB As Integer, NoisegateB As Integer
     Public Function Serialize() As XElement
         Dim res As New XElement("Sound",
             New XElement("Compressor", Compressor),
             New XElement("Delay", Delay),
             New XElement("Noisegate", Noisegate),
-            New XElement("Beat", Beat)
-        )
+            New XElement("Soften", Soften),
+            New XElement("CompressorB", CompressorB),
+            New XElement("DelayB", DelayB),
+            New XElement("NoisegateB", NoisegateB)
+)
         Return res
     End Function
     Public Sub fromXML(xml As XElement)
@@ -36,7 +39,10 @@ Public Class PresetSound
             Compressor = .<Sound>.<Compressor>.Value
             Delay = .<Sound>.<Delay>.Value
             Noisegate = .<Sound>.<Noisegate>.Value
-            Beat = .<Sound>.<Beat>.Value
+            Soften = .<Sound>.<Soften>.Value
+            CompressorB = .<Sound>.<CompressorB>.Value
+            DelayB = .<Sound>.<DelayB>.Value
+            NoisegateB = .<Sound>.<NoisegateB>.Value
         End With
     End Sub
 End Class
