@@ -58,6 +58,7 @@
     Public Sub DebugWriteError(msg As String)
         ckDebug.BackColor = Color.Red
         If Debug IsNot Nothing Then Debug.AppendText(vbCrLf & msg & vbCrLf)
+        dmx.Reset()
     End Sub
 
     Private Sub PaintBackground(sender As Object, e As PaintEventArgs) Handles Me.Paint
