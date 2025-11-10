@@ -15,7 +15,7 @@
     <LocationXPercent>100</LocationXPercent>
     <LocationYPercent>100</LocationYPercent>
     <RotationDegrees>355</RotationDegrees>
-    <FixtureModelFileName>C:\Users\Admin\Documents\Trabalho Particular\DmxCv\PublicDocuments\RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
+    <FixtureModelFileName>RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
     <LastFixedPreset>STROB</LastFixedPreset>
   </Fixture>
   <Fixture>
@@ -24,7 +24,7 @@
     <LocationXPercent>0</LocationXPercent>
     <LocationYPercent>55</LocationYPercent>
     <RotationDegrees>110</RotationDegrees>
-    <FixtureModelFileName>C:\Users\Admin\Documents\Trabalho Particular\DmxCv\PublicDocuments\RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
+    <FixtureModelFileName>RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
     <LastFixedPreset>STROB</LastFixedPreset>
   </Fixture>
   <Fixture>
@@ -33,7 +33,7 @@
     <LocationXPercent>0</LocationXPercent>
     <LocationYPercent>45</LocationYPercent>
     <RotationDegrees>70</RotationDegrees>
-    <FixtureModelFileName>C:\Users\Admin\Documents\Trabalho Particular\DmxCv\PublicDocuments\RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
+    <FixtureModelFileName>RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
     <LastFixedPreset>STROB</LastFixedPreset>
   </Fixture>
   <Fixture>
@@ -42,7 +42,7 @@
     <LocationXPercent>30</LocationXPercent>
     <LocationYPercent>0</LocationYPercent>
     <RotationDegrees>160</RotationDegrees>
-    <FixtureModelFileName>C:\Users\Admin\Documents\Trabalho Particular\DmxCv\PublicDocuments\RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
+    <FixtureModelFileName>RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
     <LastFixedPreset>STROB</LastFixedPreset>
   </Fixture>
   <Fixture>
@@ -51,7 +51,7 @@
     <LocationXPercent>90</LocationXPercent>
     <LocationYPercent>0</LocationYPercent>
     <RotationDegrees>200</RotationDegrees>
-    <FixtureModelFileName>C:\Users\Admin\Documents\Trabalho Particular\DmxCv\PublicDocuments\RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
+    <FixtureModelFileName>RGBW 8Ch.DMXCVFixtureModel.xml</FixtureModelFileName>
     <LastFixedPreset>STROB</LastFixedPreset>
   </Fixture>
   <Preset>
