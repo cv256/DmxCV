@@ -10,6 +10,15 @@ Public Class clDMX
 
     Public ComPort As Byte
 
+
+    Public Sub Reset()
+        If ComPort = 0 Then ' uDMX:
+            ' TODO:
+        Else ' Arduino:
+            SerialPort1 = Nothing
+        End If
+    End Sub
+
     Public Function Send(pChannel As Byte, pValue As Byte) As String
         Try
 

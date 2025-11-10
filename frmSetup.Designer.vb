@@ -68,10 +68,10 @@ Partial Class frmSetup
         '
         'txtPort
         '
-        Me.txtPort.Location = New System.Drawing.Point(116, 55)
-        Me.txtPort.MaxLength = 1
+        Me.txtPort.Location = New System.Drawing.Point(108, 55)
+        Me.txtPort.MaxLength = 2
         Me.txtPort.Name = "txtPort"
-        Me.txtPort.Size = New System.Drawing.Size(20, 20)
+        Me.txtPort.Size = New System.Drawing.Size(28, 20)
         Me.txtPort.TabIndex = 7
         '
         'Label1
@@ -88,9 +88,9 @@ Partial Class frmSetup
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(12, 55)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(80, 39)
+        Me.Label2.Size = New System.Drawing.Size(86, 39)
         Me.Label2.TabIndex = 8
-        Me.Label2.Text = "COM Port :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(0 = uDMX)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(1~9 = Arduino)"
+        Me.Label2.Text = "COM Port :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(0 = uDMX)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(1~16 = Arduino)"
         '
         'frmSetup
         '
